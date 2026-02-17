@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos globales adicionales si fueran necesarios */
+html {
+  scroll-behavior: smooth;
+}
