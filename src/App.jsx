@@ -1,4 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+
+// Recuerda descomentar la siguiente línea en tu proyecto local para activar Analytics:
+import { Analytics } from "@vercel/analytics/react" 
+
 import { 
   TrendingUp, 
   ShieldCheck, 
@@ -197,19 +201,19 @@ const TESTIMONIALS = [
   },
   { 
     id: 6, 
-    name: "Diana Fuentes", 
-    initials: "DF", 
+    name: "Elena Segura", 
+    initials: "ES", 
     color: "bg-yellow-100 text-yellow-600", 
-    role: "Stakeholder en ENDESA", 
-    text: "Su liderazgo en las dinámicas de ideación y su metodología de trabajo han sido clave para el rediseño del área cliente regional." 
+    role: "Ux Senior Designer en Vocento", 
+    text: "He trabajado con Javier en Vocento y es el compañero que te saluda todos los días con una nueva idea para un proyecto, que quiere probar nuevas herramientas y plantea retos continuamente. Su versatilidad hace que aporte en cualquier punto de la investigación y su capacidad para relacionarse con toda la estructura de la compañía facilita el trabajo transversal. Si añadimos que es una excelente persona, es muy fácil colaborar con él." 
   },
   { 
     id: 7, 
-    name: "Eduardo Portero", 
-    initials: "EP", 
+    name: "José Ángel Díez Orive", 
+    initials: "JD", 
     color: "bg-red-100 text-red-600", 
-    role: "Business Analyst en ALLIANZ", 
-    text: "Efectividad total. Javier tiene el equilibrio perfecto entre la visión estética y el pragmatismo que requiere un producto digital complejo." 
+    role: "Analista Programador en Natural Adabas en INSS", 
+    text: "Buen profesional y buen compañero trabajando en equipo. Aprecio mucho su compromiso y esfuerzo constante en cada proyecto." 
   },
   { 
     id: 8, 
@@ -226,14 +230,6 @@ const TESTIMONIALS = [
     color: "bg-indigo-100 text-indigo-600", 
     role: "Innovation Lead en JCYL", 
     text: "Referente en arquitectura de información. Logró simplificar sistemas administrativos densos en herramientas intuitivas y modernas." 
-  },
-  { 
-    id: 10, 
-    name: "Helena Segura", 
-    initials: "HS", 
-    color: "bg-teal-100 text-teal-600", 
-    role: "Senior Designer en EGGS", 
-    text: "Colaborar con Javier es aprender constantemente sobre diseño basado en evidencia. Un perfil senior con una visión muy clara del futuro de la disciplina." 
   }
 ];
 
@@ -584,6 +580,9 @@ export default function App() {
         .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(37, 99, 235, 0.4); }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
       `}</style>
+      
+      {/* Recuerda descomentar esto en producción: */}
+      {<Analytics/> }
     </div>
   );
 }
