@@ -172,7 +172,7 @@ const TESTIMONIALS = [
     name: "Carlos Relloso", 
     initials: "CR", 
     color: "bg-slate-100 text-slate-700", 
-    role: "CIO en Prisa Digital", 
+    role: "CDO en PRISA Radio y PRISA Noticias", 
     text: "Trabajé con Javier en PRISA y algo que siempre valoré de él es su capacidad para combinar la creatividad en el diseño con la lógica de negocio, entendiendo que esta última obliga a priorizar los mensajes por encima de una pura razón estética. Además, siempre ha tenido claro que la creatividad surge de la integración entre diseño y tecnología, siendo esta última un elemento clave en el desarrollo de cualquier proceso creativo." 
   },
   { 
