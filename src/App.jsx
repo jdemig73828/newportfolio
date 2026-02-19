@@ -328,6 +328,9 @@ export default function App() {
             <p className="text-lg md:text-2xl text-slate-400 font-light max-w-2xl leading-relaxed mx-auto lg:mx-0 font-sans text-left">
               Transformando comportamientos de usuario en <span className="text-white font-semibold italic border-b-2 border-blue-500">valor de negocio cuantificable</span> mediante evidencia científica.
             </p>
+            <p className="text-lg md:text-2xl text-slate-400 font-light max-w-2xl leading-relaxed mx-auto lg:mx-0 font-sans text-left">
+              Me muevo en la intersección entre la Influencia Ética, los ciclos de vida del cliente y, finalmente, la conversión. Si crees que encajamos, no lo dejes para luego. Envíame un mensaje, y te explicaré sobre los proyectos que verás a continuación cómo se investigó, que nos motivó a tomar decisiones, cuál era el problema y como se solucionó.<span className="text-white font-semibold italic border-b-2 border-blue-500">Estoy a tu entera disposición.</span>
+            </p>  
             <div className="flex flex-col items-center lg:items-start gap-8 pt-4 text-left">
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-left">
                 <a href="#evidencias" className="flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-2xl font-heading font-bold hover:bg-blue-500 transition-all shadow-xl shadow-blue-500/20 text-sm tracking-wide text-left">
