@@ -40,7 +40,7 @@ const EXPERIENCE = [
     id: 'trayectoria',
     company: 'VOCENTO',
     role: 'UX - UI & Behavioral Designer',
-    period: '2023 - Actualidad',
+    period: '2023 - 2026',
     description: 'Estrategia corporativa de usuarios para ABC y medios regionales.',
     bullets: ['Optimización de CRO mediante Behavioral Design.', 'Rediseño de flujos de pago y registro.'],
     isCurrent: true
