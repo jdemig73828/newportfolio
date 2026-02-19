@@ -42,7 +42,7 @@ const EXPERIENCE = [
     role: 'UX - UI & Behavioral Designer',
     period: '2023 - 2026',
     description: 'Estrategia corporativa de usuarios para ABC y medios regionales.',
-    bullets: ['Optimización de CRO mediante Behavioral Design.', 'Rediseño de flujos de pago y registro.'],
+    bullets: ['Optimización de CRO mediante Behavioral Design.', 'Rediseño de flujos de pago y login/registro y piezas de captación.', 'Diseño y ejecución de research cuantitativo y cualitativo.', 'IA Powered con base en investigación y análisis de datos.'],
     isCurrent: true
   },
   {
