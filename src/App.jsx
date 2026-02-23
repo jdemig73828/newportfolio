@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 // Recuerda descomentar la siguiente línea en tu proyecto local para activar Analytics:
-// import { Analytics } from "@vercel/analytics/react" 
+import { Analytics } from "@vercel/analytics/react" 
 
 import { 
   TrendingUp, 
@@ -513,7 +513,7 @@ export default function App() {
           
           <div className="mb-12">
             <p className="text-slate-600 text-lg md:text-xl font-light leading-relaxed font-sans max-w-5xl">
-              Te cuento a continuación sobre casos reales, cúal ha sido el proceso de diseño de resultados para cumplir con cada necesidad.
+              Puedes ver a continuación cúal ha sido el proceso de diseño de resultados con diferentes necesidades.
             </p>
           </div>
 
@@ -949,7 +949,7 @@ export default function App() {
       `}</style>
       
       {/* Recuerda descomentar esto en producción: */}
-      {/* <Analytics/> */}
+      { <Analytics/>}
     </div>
   );
 }
