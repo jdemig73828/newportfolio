@@ -43,7 +43,7 @@ const EXPERIENCE = [
     role: 'UX - UI & Behavioral Designer',
     period: '2023 - 2026',
     description: 'Estrategia corporativa de usuarios para ABC y medios regionales.',
-    bullets: ['Optimización de CRO mediante Behavioral Design.', 'Rediseño de flujos de pago y login/registro y piezas de captación.', 'Diseño y ejecución de research cuantitativo y cualitativo.', 'IA Powered con base en investigación y análisis de datos.'],
+    bullets: ['Optimización de CRO mediante Behavioral Design.', 'Rediseño de flujos de pago, login/registro y piezas de captación.', 'Diseño y ejecución de research cuantitativo y cualitativo.', 'IA Powered con base en investigación y análisis de datos.'],
     isCurrent: true
   },
   {
@@ -158,6 +158,16 @@ const COMPANY_LOGOS = [
   "1JnOHjdPPBu9OCBkbH29mrRPcZm1W2NYt"
 ];
 
+// --- GALLERY IMAGES DATA ---
+const GALLERY_IMAGES = [
+  "1xMu5M2Kup6yzPoWUxMLxghYa7xl8aGSU",
+  "1VyD5cFTYZK0VaTMM3D_T3T1XQiU1ljsK",
+  "1dyEjMI2rEgZuyQ_MlW1m0HZja1iWVjg7",
+  "1r3l8--OIOOlj9URQO_BfmmNVaEaIzI9d",
+  "1rRUiiT7DrcoPH_FKg_1bXAyMfGIeXIK7",
+  "1rvZs9U5Qr4fZ1VOSiDKAtFYlptKq-fQ_"
+];
+
 // --- TESTIMONIALS DATA ---
 const TESTIMONIALS = [
   { 
@@ -242,6 +252,7 @@ export default function App() {
   const scrollProcesoRef1 = useRef(null); // Ref para el slider de Proceso 1
   const scrollProcesoRef2 = useRef(null); // Ref para el slider de Proceso 2
   const scrollProcesoRef3 = useRef(null); // Ref para el slider de Proceso 3
+  const scrollGalleryRef = useRef(null); // Ref para la galería
 
   // --- SCROLL SPY & TOP BUTTON LOGIC ---
   useEffect(() => {
@@ -293,6 +304,14 @@ export default function App() {
       const { scrollLeft, clientWidth } = ref.current;
       const scrollTo = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
       ref.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+    }
+  };
+
+  const scrollGallery = (direction) => {
+    if (scrollGalleryRef.current) {
+      const { scrollLeft, clientWidth } = scrollGalleryRef.current;
+      const scrollTo = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
+      scrollGalleryRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
     }
   };
 
@@ -505,6 +524,40 @@ export default function App() {
               </div>
             ))}
           </div>
+
+          {/* --- GALERÍA DE EVIDENCIAS --- */}
+          <div className="mt-16 md:mt-24 relative group text-left max-w-7xl mx-auto px-2">
+            <button 
+              onClick={() => scrollGallery('left')}
+              className="absolute left-0 md:left-4 top-1/2 -translate-y-1/2 z-20 p-4 bg-white rounded-full shadow-xl text-blue-600 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            <button 
+              onClick={() => scrollGallery('right')}
+              className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2 z-20 p-4 bg-white rounded-full shadow-xl text-blue-600 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
+            >
+              <ChevronRight size={24} />
+            </button>
+
+            <div 
+              ref={scrollGalleryRef}
+              className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8 pt-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {GALLERY_IMAGES.map((imgId, idx) => (
+                <div key={idx} className="min-w-full snap-center flex justify-center items-center px-4 md:px-12">
+                  <img 
+                    src={`https://lh3.googleusercontent.com/d/${imgId}`}
+                    alt={`Galería de diseño ${idx + 1}`}
+                    className="w-full h-auto object-contain bg-transparent"
+                    style={{ maxHeight: '85vh' }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
         </section>
 
         {/* --- NUEVA SECCIÓN: EL PROCESO --- */}
@@ -791,7 +844,7 @@ export default function App() {
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">3. DISEÑO</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
-                    Mitigación de la incertidumbre mediante un progresímetro persistente y autocompletado de datos conocidos. Inserción táctica de <i>nudges</i> en los pasos intermedios y aplicación estricta de la "regla del pico-final" en la <i>Thank You Page</i>, diseñada para actuar como puente hacia el <i>Onboarding</i>.
+                    Mitigación de la incertidumbre mediante un "steper" y autocompletado de datos conocidos. Inserción táctica de <i>nudges</i> en los pasos intermedios y aplicación estricta de la "regla del pico-final" en la <i>Thank You Page</i>, diseñada para actuar como puente hacia el <i>Onboarding</i>.
                   </p>
                 </div>
 
