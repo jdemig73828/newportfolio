@@ -43,7 +43,7 @@ const EXPERIENCE = [
     role: 'UX - UI & Behavioral Designer',
     period: '2023 - 2026',
     description: 'Estrategia corporativa de usuarios para ABC y medios regionales.',
-    bullets: ['Optimización de CRO mediante Behavioral Design.', 'Rediseño de flujos de pago, login/registro y piezas de captación.', 'Diseño y ejecución de research cuantitativo y cualitativo. Testing y experimentación.', 'IA Powered con base en investigación y análisis de datos.'],
+    bullets: ['Optimización de CRO mediante Behavioral Design.', 'Rediseño de flujos de pago y login/registro y piezas de captación.', 'Diseño y ejecución de research cuantitativo y cualitativo.', 'IA Powered con base en investigación y análisis de datos.'],
     isCurrent: true
   },
   {
@@ -595,9 +595,22 @@ export default function App() {
                     Implementación transversal en la plataforma de identidad (EVOLOK) y monitorización analítica (Adobe Customer Journey), logrando un aumento significativo y escalable de usuarios identificados.
                   </p>
                 </div>
-
               </div>
             </div>
+
+            {/* SECCIÓN GOALS */}
+            <div className="mt-10 p-6 md:p-8 bg-white rounded-3xl border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col md:flex-row items-start gap-5 transition-transform hover:-translate-y-1">
+              <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl shrink-0">
+                <Award size={28} strokeWidth={2.5} />
+              </div>
+              <div>
+                <h4 className="text-lg font-heading font-black text-[#0A192F] mb-3 uppercase tracking-widest">Goals</h4>
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans">
+                  Incremento sostenido en la tasa de éxito de logueos y registros (estándar y Social Login), impactando directamente en el volumen de usuarios identificados y disparando el crecimiento de nuevas suscripciones en el periodo de mayo de 2023 a agosto de 2025.
+                </p>
+              </div>
+            </div>
+
           </div>
 
           {/* Caja Proceso 2: Piezas de captación VOCENTO */}
@@ -681,6 +694,20 @@ export default function App() {
 
               </div>
             </div>
+
+            {/* SECCIÓN GOALS */}
+            <div className="mt-10 p-6 md:p-8 bg-white rounded-3xl border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col md:flex-row items-start gap-5 transition-transform hover:-translate-y-1">
+              <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl shrink-0">
+                <Award size={28} strokeWidth={2.5} />
+              </div>
+              <div>
+                <h4 className="text-lg font-heading font-black text-[#0A192F] mb-3 uppercase tracking-widest">Goals</h4>
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans">
+                  Aumento exponencial del CTR (Click-Through Rate) y paso a funnel en todas las cabeceras. La optimización elevó la atribución de marca, clarificó la propuesta de valor y disparó el índice de confianza percibida, validado mediante data cuantitativa y sesiones cualitativas moderadas.
+                </p>
+              </div>
+            </div>
+
           </div>
 
           {/* Caja Proceso 3: Checkout VOCENTO */}
@@ -764,6 +791,20 @@ export default function App() {
 
               </div>
             </div>
+
+            {/* SECCIÓN GOALS */}
+            <div className="mt-10 p-6 md:p-8 bg-white rounded-3xl border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col md:flex-row items-start gap-5 transition-transform hover:-translate-y-1">
+              <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl shrink-0">
+                <Award size={28} strokeWidth={2.5} />
+              </div>
+              <div>
+                <h4 className="text-lg font-heading font-black text-[#0A192F] mb-3 uppercase tracking-widest">Goals</h4>
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans">
+                  Reducción drástica de la tasa de abandono (drop-off) en el embudo transaccional. El rediseño en 3 pasos agilizó el proceso, incrementando significativamente la conversión final y la percepción de seguridad, métricas validadas mediante investigación cualitativa con usuarios reales.
+                </p>
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -881,7 +922,7 @@ export default function App() {
       `}</style>
       
       {/* Recuerda descomentar esto en producción: */}
-      {<Analytics/> }
+      { <Analytics/> }
     </div>
   );
 }
