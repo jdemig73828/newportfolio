@@ -483,7 +483,7 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 text-left">
             {PROJECTS_PORTFOLIO.map((p, idx) => (
-              <div key={idx} className="bg-white rounded-[45px] md:rounded-[55px] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all group flex flex-col h-full border-b-[10px] hover:border-b-blue-600 relative text-left">
+              <div key={idx} className="bg-white rounded-[45px] md:rounded-[55px] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:border-blue-200 transition-all group flex flex-col h-full relative text-left">
                 <div className="h-64 md:h-80 bg-slate-100 relative overflow-hidden text-left">
                   <img src={p.imageUrl} alt={p.title} className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F]/70 via-transparent to-transparent"></div>
@@ -949,7 +949,7 @@ export default function App() {
       `}</style>
       
       {/* Recuerda descomentar esto en producción: */}
-      { <Analytics/>}
+      { <Analytics/> }
     </div>
   );
 }
