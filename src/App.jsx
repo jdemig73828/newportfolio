@@ -31,7 +31,8 @@ import {
   Smartphone, 
   Monitor, 
   Component, 
-  ExternalLink 
+  ExternalLink,
+  ArrowUp
 } from 'lucide-react';
 
 // --- DATA: EXPERIENCIA ---
@@ -42,7 +43,7 @@ const EXPERIENCE = [
     role: 'UX - UI & Behavioral Designer',
     period: '2023 - 2026',
     description: 'Estrategia corporativa de usuarios para ABC y medios regionales.',
-    bullets: ['Optimización de CRO mediante Behavioral Design.', 'Rediseño de flujos de pago y login/registro y piezas de captación.', 'Diseño y ejecución de research cuantitativo y cualitativo.', 'IA Powered con base en investigación y análisis de datos.'],
+    bullets: ['Optimización de CRO mediante Behavioral Design.', 'Rediseño de flujos de pago, login/registro y piezas de captación.', 'Diseño y ejecución de research cuantitativo y cualitativo. Testing y experimentación.', 'IA Powered con base en investigación y análisis de datos.'],
     isCurrent: true
   },
   {
@@ -235,12 +236,25 @@ const TESTIMONIALS = [
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('trayectoria');
+  const [showTopBtn, setShowTopBtn] = useState(false);
+  
   const scrollContainerRef = useRef(null);
+  const scrollProcesoRef1 = useRef(null); // Ref para el slider de Proceso 1
+  const scrollProcesoRef2 = useRef(null); // Ref para el slider de Proceso 2
+  const scrollProcesoRef3 = useRef(null); // Ref para el slider de Proceso 3
 
-  // --- SCROLL SPY LOGIC ---
+  // --- SCROLL SPY & TOP BUTTON LOGIC ---
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['trayectoria', 'evidencias', 'ecosistema', 'testimonios'];
+      // Logic for Floating Top Button
+      if (window.scrollY > 400) {
+        setShowTopBtn(true);
+      } else {
+        setShowTopBtn(false);
+      }
+
+      // Logic for active section menu
+      const sections = ['trayectoria', 'evidencias', 'proceso', 'ecosistema', 'testimonios'];
       let current = activeSection;
 
       for (const sectionId of sections) {
@@ -262,6 +276,10 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [activeSection]);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const scrollTestimonials = (direction) => {
     if (scrollContainerRef.current) {
       const { scrollLeft, clientWidth } = scrollContainerRef.current;
@@ -270,9 +288,26 @@ export default function App() {
     }
   };
 
+  const scrollProceso = (direction, ref) => {
+    if (ref.current) {
+      const { scrollLeft, clientWidth } = ref.current;
+      const scrollTo = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
+      ref.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-[#F8FAFC] font-sans text-slate-800 scroll-smooth overflow-x-hidden text-left">
+    <div className="min-h-screen bg-[#F8FAFC] font-sans text-slate-800 scroll-smooth overflow-x-hidden text-left relative">
       
+      {/* BOTÓN FLOTANTE VOLVER ARRIBA */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-6 md:right-8 z-50 p-4 bg-blue-600 text-white rounded-full shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:bg-blue-500 hover:-translate-y-1 transition-all duration-300 ${showTopBtn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+        aria-label="Volver arriba"
+      >
+        <ArrowUp size={24} />
+      </button>
+
       {/* --- NAVEGACIÓN --- */}
       <nav className="sticky top-0 z-50 bg-[#0A192F]/95 backdrop-blur-md border-b border-white/10 px-4 md:px-6 py-4 text-left">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -289,7 +324,7 @@ export default function App() {
           </div>
           
           <div className="hidden md:flex gap-10 text-[11px] font-heading font-bold uppercase tracking-[0.1em] relative items-center">
-            {['trayectoria', 'evidencias', 'ecosistema', 'testimonios'].map((id) => (
+            {['trayectoria', 'evidencias', 'proceso', 'ecosistema', 'testimonios'].map((id) => (
               <a 
                 key={id}
                 href={`#${id}`} 
@@ -471,6 +506,267 @@ export default function App() {
             ))}
           </div>
         </section>
+
+        {/* --- NUEVA SECCIÓN: EL PROCESO --- */}
+        <section id="proceso" className="mb-24 md:mb-32 scroll-mt-32 text-left">
+          <SectionHeader title="Diseñando Resultados" subtitle="El Proceso (End to End)" />
+          
+          <div className="mb-12">
+            <p className="text-slate-600 text-lg md:text-xl font-light leading-relaxed font-sans max-w-5xl">
+              Te cuento a continuación sobre casos reales, cúal ha sido el proceso de diseño de resultados para cumplir con cada necesidad.
+            </p>
+          </div>
+
+          {/* Caja Proceso 1: Flujo de Login y Registro VOCENTO */}
+          <div className="bg-white p-8 md:p-12 lg:p-16 rounded-[40px] md:rounded-[60px] shadow-sm border border-slate-100 relative text-left mb-16">
+            <div className="mb-12">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-[#0A192F] mb-4 leading-tight">Flujo de login y registro en VOCENTO</h3>
+              <div className="flex items-center gap-3">
+                <span className="bg-blue-100 text-blue-700 font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0">
+                  Necesidad
+                </span>
+                <p className="text-slate-600 text-lg md:text-xl font-medium">Rediseño de flujos para usuarios anónimos y registrados.</p>
+              </div>
+            </div>
+
+            <div className="relative group text-left">
+              <button 
+                onClick={() => scrollProceso('left', scrollProcesoRef1)}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 z-20 p-4 bg-white rounded-full shadow-xl text-blue-600 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button 
+                onClick={() => scrollProceso('right', scrollProcesoRef1)}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 z-20 p-4 bg-white rounded-full shadow-xl text-blue-600 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
+              >
+                <ChevronRight size={24} />
+              </button>
+
+              <div 
+                ref={scrollProcesoRef1}
+                className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8 pt-4 px-2 items-stretch"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {/* Step 1 */}
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                    <Search size={28} className="text-blue-600" />
+                  </div>
+                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">1. DESCUBRIMIENTO</h4>
+                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                    Análisis de requisitos con el objetivo estratégico de escalar el volumen de registros y <i>logins</i> en todo el ecosistema digital (Web & App).
+                  </p>
+                </div>
+
+                {/* Step 2 */}
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                    <Target size={28} className="text-blue-600" />
+                  </div>
+                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">2. DEFINICIÓN</h4>
+                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                    Auditoría de los flujos existentes e identificación de barreras de conversión. Validación de hipótesis de mejora en alineación continua con los <i>Stakeholders</i>.
+                  </p>
+                </div>
+
+                {/* Step 3 */}
+                <div className="min-w-[85vw] md:min-w-[420px] max-w-[500px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                    <Layout size={28} className="text-blue-600" />
+                  </div>
+                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">3. DISEÑO</h4>
+                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                    Eliminación sistemática de fricción cognitiva: visibilidad clara de la gratuidad, reducción de campos cognitivos ("Baby-Steps") y aplicación de sesgos ("nudges") para guiar al usuario. Todo bajo una estricta estrategia <i>mobile-first</i> (70% del tráfico).
+                  </p>
+                </div>
+
+                {/* Step 4 */}
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                    <TrendingUp size={28} className="text-blue-600" />
+                  </div>
+                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide leading-tight">4. ENTREGA Y SEGUIMIENTO</h4>
+                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                    Implementación transversal en la plataforma de identidad (EVOLOK) y monitorización analítica (Adobe Customer Journey), logrando un aumento significativo y escalable de usuarios identificados.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          {/* Caja Proceso 2: Piezas de captación VOCENTO */}
+          <div className="bg-white p-8 md:p-12 lg:p-16 rounded-[40px] md:rounded-[60px] shadow-sm border border-slate-100 relative text-left mb-16">
+            <div className="mb-12">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-[#0A192F] mb-4 leading-tight">Piezas de captación VOCENTO</h3>
+              <div className="flex items-center gap-3">
+                <span className="bg-blue-100 text-blue-700 font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0">
+                  Necesidad
+                </span>
+                <p className="text-slate-600 text-lg md:text-xl font-medium">Rediseño estratégico de piezas para maximizar la conversión de usuarios.</p>
+              </div>
+            </div>
+
+            <div className="relative group text-left">
+              <button 
+                onClick={() => scrollProceso('left', scrollProcesoRef2)}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 z-20 p-4 bg-white rounded-full shadow-xl text-blue-600 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button 
+                onClick={() => scrollProceso('right', scrollProcesoRef2)}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 z-20 p-4 bg-white rounded-full shadow-xl text-blue-600 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
+              >
+                <ChevronRight size={24} />
+              </button>
+
+              <div 
+                ref={scrollProcesoRef2}
+                className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8 pt-4 px-2 items-stretch"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {/* Step 1 */}
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                    <Search size={28} className="text-blue-600" />
+                  </div>
+                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">1. DESCUBRIMIENTO</h4>
+                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                    Adaptación a la nueva arquitectura de monetización (EVOLOK) estableciendo como KPI principal la maximización de la tasa de conversión en el embudo superior.
+                  </p>
+                </div>
+
+                {/* Step 2 */}
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                    <Target size={28} className="text-blue-600" />
+                  </div>
+                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">2. DEFINICIÓN</h4>
+                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                    Diagnóstico de fricciones en el embudo de captación e ideación de soluciones estructuradas en heurísticas de <i>Behavioral Design</i>, validadas directamente a nivel de negocio.
+                  </p>
+                </div>
+
+                {/* Step 3 */}
+                <div className="min-w-[85vw] md:min-w-[420px] max-w-[500px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                    <Layout size={28} className="text-blue-600" />
+                  </div>
+                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">3. DISEÑO</h4>
+                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                    Rediseño integral de UI (Paywalls, PopUps, Landings). Aplicación de diseño cognitivo para dirigir la atención: reducción de la sobrecarga de opciones (Ley de Hick), fortalecimiento de influencia social (testimonios expertos) e integración de fuertes <i>drivers</i> de acción (aversión a la pérdida y promesas de cancelación flexible).
+                  </p>
+                </div>
+
+                {/* Step 4 */}
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                    <TrendingUp size={28} className="text-blue-600" />
+                  </div>
+                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide leading-tight">4. ENTREGA Y SEGUIMIENTO</h4>
+                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                    Despliegue de los nuevos componentes y establecimiento de un <i>roadmap</i> de iteración continua. Configuración de tests A/B para asegurar la optimización constante en todos los canales.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          {/* Caja Proceso 3: Checkout VOCENTO */}
+          <div className="bg-white p-8 md:p-12 lg:p-16 rounded-[40px] md:rounded-[60px] shadow-sm border border-slate-100 relative text-left">
+            <div className="mb-12">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-[#0A192F] mb-4 leading-tight">Rediseño flujo de compra (CheckOut) VOCENTO</h3>
+              <div className="flex items-center gap-3">
+                <span className="bg-blue-100 text-blue-700 font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0">
+                  Necesidad
+                </span>
+                <p className="text-slate-600 text-lg md:text-xl font-medium">Rediseño de flujo de compra transaccional para Móvil y Desktop.</p>
+              </div>
+            </div>
+
+            <div className="relative group text-left">
+              <button 
+                onClick={() => scrollProceso('left', scrollProcesoRef3)}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 z-20 p-4 bg-white rounded-full shadow-xl text-blue-600 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button 
+                onClick={() => scrollProceso('right', scrollProcesoRef3)}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 z-20 p-4 bg-white rounded-full shadow-xl text-blue-600 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
+              >
+                <ChevronRight size={24} />
+              </button>
+
+              <div 
+                ref={scrollProcesoRef3}
+                className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8 pt-4 px-2 items-stretch"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {/* Step 1 */}
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                    <Search size={28} className="text-blue-600" />
+                  </div>
+                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">1. DESCUBRIMIENTO</h4>
+                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                    Análisis profundo de los datos del <i>checkout</i> heredado para identificar cuellos de botella y comprender las causas reales de la alta tasa de abandono (<i>drop-off</i>).
+                  </p>
+                </div>
+
+                {/* Step 2 */}
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                    <Target size={28} className="text-blue-600" />
+                  </div>
+                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">2. DEFINICIÓN</h4>
+                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                    Conceptualización de un nuevo modelo mental para el usuario. Decisión estratégica de transformar un proceso denso en un embudo lineal y predecible de 3 pasos sencillos.
+                  </p>
+                </div>
+
+                {/* Step 3 */}
+                <div className="min-w-[85vw] md:min-w-[420px] max-w-[500px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                    <Layout size={28} className="text-blue-600" />
+                  </div>
+                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">3. DISEÑO</h4>
+                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                    Mitigación de la incertidumbre mediante un progresímetro persistente y autocompletado de datos conocidos. Inserción táctica de <i>nudges</i> en los pasos intermedios y aplicación estricta de la "regla del pico-final" en la <i>Thank You Page</i>, diseñada para actuar como puente hacia el <i>Onboarding</i>.
+                  </p>
+                </div>
+
+                {/* Step 4 */}
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                    <TrendingUp size={28} className="text-blue-600" />
+                  </div>
+                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide leading-tight">4. ENTREGA Y SEGUIMIENTO</h4>
+                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                    Escalado del componente <i>checkout</i> a las 12 cabeceras, hiper-localizando *assets* visuales y copys para potenciar la conexión regional, garantizando una UX óptima bajo estándares móviles.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
       </main>
 
       {/* --- MÓDULO ECOSISTEMA --- */}
@@ -568,7 +864,7 @@ export default function App() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-left">
-           <p className="text-[10px] text-slate-600 font-heading uppercase tracking-widest font-bold text-left text-left">© 2026 JDM</p>
+           <p className="text-[10px] text-slate-600 font-heading uppercase tracking-widest font-bold text-left text-left">© 2026 JDM-OS | Corporate Excellence v6.4</p>
         </div>
       </footer>
 
