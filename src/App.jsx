@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 // Recuerda descomentar la siguiente línea en tu proyecto local para activar Analytics:
-import { Analytics } from "@vercel/analytics/react" 
+// import { Analytics } from "@vercel/analytics/react" 
 
 import { 
   TrendingUp, 
@@ -364,7 +364,7 @@ export default function App() {
               Transformando comportamientos de usuario en <span className="text-white font-semibold italic border-b-2 border-blue-500">valor de negocio cuantificable</span> mediante evidencia científica.
             </p>
             <p className="text-lg md:text-2xl text-slate-400 font-light max-w-2xl leading-relaxed mx-auto lg:mx-0 font-sans text-left">
-              Me muevo en la intersección entre la Influencia Ética, los ciclos de vida del cliente y, finalmente, la conversión. Si crees que encajamos, no lo dejes para luego. Envíame un mensaje, y te explicaré sobre los proyectos que verás a continuación cómo se investigó, que nos motivó a tomar decisiones, cuál era el problema y como se solucionó.<br/><span className="text-white font-semibold italic border-b-2 border-blue-500">Estoy a tu entera disposición.</span>
+              Me muevo en la intersección entre la Influencia Ética, el ciclo de vida del usuario y la conversión. Escríbeme y te detallaré la estrategia detrás de los siguientes proyectos: el reto, la investigación y las decisiones clave.<br/><span className="text-white font-semibold italic border-b-2 border-blue-500">Estoy a tu entera disposición.</span>
             </p>  
             <div className="flex flex-col items-center lg:items-start gap-8 pt-4 text-left">
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-left">
@@ -518,11 +518,11 @@ export default function App() {
           </div>
 
           {/* Caja Proceso 1: Flujo de Login y Registro VOCENTO */}
-          <div className="bg-white p-8 md:p-12 lg:p-16 rounded-[40px] md:rounded-[60px] shadow-sm border border-slate-100 relative text-left mb-16">
+          <div className="bg-[#EEF2F8] p-8 md:p-12 lg:p-16 rounded-[40px] md:rounded-[60px] border border-slate-200 relative text-left mb-16">
             <div className="mb-12">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-[#0A192F] mb-4 leading-tight">Flujo de login y registro en VOCENTO</h3>
               <div className="flex items-center gap-3">
-                <span className="bg-blue-100 text-blue-700 font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0">
+                <span className="bg-slate-200 text-slate-700 font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0">
                   Necesidad
                 </span>
                 <p className="text-slate-600 text-lg md:text-xl font-medium">Rediseño de flujos para usuarios anónimos y registrados.</p>
@@ -549,49 +549,49 @@ export default function App() {
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
                 {/* Step 1 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Search size={28} className="text-blue-600" />
+                    <Search size={28} className="text-[#0A192F]" />
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">1. DESCUBRIMIENTO</h4>
-                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                  <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Análisis de requisitos con el objetivo estratégico de escalar el volumen de registros y <i>logins</i> en todo el ecosistema digital (Web & App).
                   </p>
                 </div>
 
                 {/* Step 2 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Target size={28} className="text-blue-600" />
+                    <Target size={28} className="text-[#0A192F]" />
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">2. DEFINICIÓN</h4>
-                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                  <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Auditoría de los flujos existentes e identificación de barreras de conversión. Validación de hipótesis de mejora en alineación continua con los <i>Stakeholders</i>.
                   </p>
                 </div>
 
                 {/* Step 3 */}
-                <div className="min-w-[85vw] md:min-w-[420px] max-w-[500px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                <div className="min-w-[85vw] md:min-w-[420px] max-w-[500px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Layout size={28} className="text-blue-600" />
+                    <Layout size={28} className="text-[#0A192F]" />
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">3. DISEÑO</h4>
-                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                  <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Eliminación sistemática de fricción cognitiva: visibilidad clara de la gratuidad, reducción de campos cognitivos ("Baby-Steps") y aplicación de sesgos ("nudges") para guiar al usuario. Todo bajo una estricta estrategia <i>mobile-first</i> (70% del tráfico).
                   </p>
                 </div>
 
                 {/* Step 4 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <TrendingUp size={28} className="text-blue-600" />
+                    <TrendingUp size={28} className="text-[#0A192F]" />
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide leading-tight">4. ENTREGA Y SEGUIMIENTO</h4>
-                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                  <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Implementación transversal en la plataforma de identidad (EVOLOK) y monitorización analítica (Adobe Customer Journey), logrando un aumento significativo y escalable de usuarios identificados.
                   </p>
                 </div>
@@ -599,8 +599,8 @@ export default function App() {
             </div>
 
             {/* SECCIÓN GOALS */}
-            <div className="mt-10 p-6 md:p-8 bg-white rounded-3xl border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col md:flex-row items-start gap-5 transition-transform hover:-translate-y-1">
-              <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl shrink-0">
+            <div className="mt-10 p-6 md:p-8 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col md:flex-row items-start gap-5 transition-transform hover:-translate-y-1">
+              <div className="p-4 bg-slate-50 text-[#0A192F] rounded-2xl shrink-0">
                 <Award size={28} strokeWidth={2.5} />
               </div>
               <div>
@@ -611,14 +611,23 @@ export default function App() {
               </div>
             </div>
 
+            {/* IMAGEN DE RESULTADOS */}
+            <div className="mt-12 flex justify-center items-center w-full">
+              <img 
+                src="https://lh3.googleusercontent.com/d/1rVuLFE10h6ZQqwFfr1wTpzBw30OE1fSS" 
+                alt="Métricas y Resultados" 
+                className="w-3/4 md:w-1/3 max-w-sm lg:max-w-md h-auto object-contain"
+              />
+            </div>
+
           </div>
 
           {/* Caja Proceso 2: Piezas de captación VOCENTO */}
-          <div className="bg-white p-8 md:p-12 lg:p-16 rounded-[40px] md:rounded-[60px] shadow-sm border border-slate-100 relative text-left mb-16">
+          <div className="bg-[#EEF2F8] p-8 md:p-12 lg:p-16 rounded-[40px] md:rounded-[60px] border border-slate-200 relative text-left mb-16">
             <div className="mb-12">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-[#0A192F] mb-4 leading-tight">Piezas de captación VOCENTO</h3>
               <div className="flex items-center gap-3">
-                <span className="bg-blue-100 text-blue-700 font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0">
+                <span className="bg-slate-200 text-slate-700 font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0">
                   Necesidad
                 </span>
                 <p className="text-slate-600 text-lg md:text-xl font-medium">Rediseño estratégico de piezas para maximizar la conversión de usuarios.</p>
@@ -645,49 +654,49 @@ export default function App() {
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
                 {/* Step 1 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Search size={28} className="text-blue-600" />
+                    <Search size={28} className="text-[#0A192F]" />
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">1. DESCUBRIMIENTO</h4>
-                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                  <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Adaptación a la nueva arquitectura de monetización (EVOLOK) estableciendo como KPI principal la maximización de la tasa de conversión en el embudo superior.
                   </p>
                 </div>
 
                 {/* Step 2 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Target size={28} className="text-blue-600" />
+                    <Target size={28} className="text-[#0A192F]" />
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">2. DEFINICIÓN</h4>
-                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                  <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Diagnóstico de fricciones en el embudo de captación e ideación de soluciones estructuradas en heurísticas de <i>Behavioral Design</i>, validadas directamente a nivel de negocio.
                   </p>
                 </div>
 
                 {/* Step 3 */}
-                <div className="min-w-[85vw] md:min-w-[420px] max-w-[500px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                <div className="min-w-[85vw] md:min-w-[420px] max-w-[500px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Layout size={28} className="text-blue-600" />
+                    <Layout size={28} className="text-[#0A192F]" />
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">3. DISEÑO</h4>
-                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                  <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Rediseño integral de UI (Paywalls, PopUps, Landings). Aplicación de diseño cognitivo para dirigir la atención: reducción de la sobrecarga de opciones (Ley de Hick), fortalecimiento de influencia social (testimonios expertos) e integración de fuertes <i>drivers</i> de acción (aversión a la pérdida y promesas de cancelación flexible).
                   </p>
                 </div>
 
                 {/* Step 4 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <TrendingUp size={28} className="text-blue-600" />
+                    <TrendingUp size={28} className="text-[#0A192F]" />
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide leading-tight">4. ENTREGA Y SEGUIMIENTO</h4>
-                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                  <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Despliegue de los nuevos componentes y establecimiento de un <i>roadmap</i> de iteración continua. Configuración de tests A/B para asegurar la optimización constante en todos los canales.
                   </p>
                 </div>
@@ -696,8 +705,8 @@ export default function App() {
             </div>
 
             {/* SECCIÓN GOALS */}
-            <div className="mt-10 p-6 md:p-8 bg-white rounded-3xl border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col md:flex-row items-start gap-5 transition-transform hover:-translate-y-1">
-              <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl shrink-0">
+            <div className="mt-10 p-6 md:p-8 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col md:flex-row items-start gap-5 transition-transform hover:-translate-y-1">
+              <div className="p-4 bg-slate-50 text-[#0A192F] rounded-2xl shrink-0">
                 <Award size={28} strokeWidth={2.5} />
               </div>
               <div>
@@ -708,14 +717,23 @@ export default function App() {
               </div>
             </div>
 
+            {/* IMAGEN DE RESULTADOS */}
+            <div className="mt-12 flex justify-center items-center w-full">
+              <img 
+                src="https://lh3.googleusercontent.com/d/1v7bK8ZSavWX832ueVGtZRaHrWSkucXk8" 
+                alt="Métricas y Resultados Captación" 
+                className="w-3/4 md:w-1/3 max-w-sm lg:max-w-md h-auto object-contain"
+              />
+            </div>
+
           </div>
 
           {/* Caja Proceso 3: Checkout VOCENTO */}
-          <div className="bg-white p-8 md:p-12 lg:p-16 rounded-[40px] md:rounded-[60px] shadow-sm border border-slate-100 relative text-left">
+          <div className="bg-[#EEF2F8] p-8 md:p-12 lg:p-16 rounded-[40px] md:rounded-[60px] border border-slate-200 relative text-left">
             <div className="mb-12">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-[#0A192F] mb-4 leading-tight">Rediseño flujo de compra (CheckOut) VOCENTO</h3>
               <div className="flex items-center gap-3">
-                <span className="bg-blue-100 text-blue-700 font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0">
+                <span className="bg-slate-200 text-slate-700 font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0">
                   Necesidad
                 </span>
                 <p className="text-slate-600 text-lg md:text-xl font-medium">Rediseño de flujo de compra transaccional para Móvil y Desktop.</p>
@@ -742,49 +760,49 @@ export default function App() {
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
                 {/* Step 1 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Search size={28} className="text-blue-600" />
+                    <Search size={28} className="text-[#0A192F]" />
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">1. DESCUBRIMIENTO</h4>
-                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                  <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Análisis profundo de los datos del <i>checkout</i> heredado para identificar cuellos de botella y comprender las causas reales de la alta tasa de abandono (<i>drop-off</i>).
                   </p>
                 </div>
 
                 {/* Step 2 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Target size={28} className="text-blue-600" />
+                    <Target size={28} className="text-[#0A192F]" />
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">2. DEFINICIÓN</h4>
-                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                  <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Conceptualización de un nuevo modelo mental para el usuario. Decisión estratégica de transformar un proceso denso en un embudo lineal y predecible de 3 pasos sencillos.
                   </p>
                 </div>
 
                 {/* Step 3 */}
-                <div className="min-w-[85vw] md:min-w-[420px] max-w-[500px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                <div className="min-w-[85vw] md:min-w-[420px] max-w-[500px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Layout size={28} className="text-blue-600" />
+                    <Layout size={28} className="text-[#0A192F]" />
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">3. DISEÑO</h4>
-                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                  <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Mitigación de la incertidumbre mediante un progresímetro persistente y autocompletado de datos conocidos. Inserción táctica de <i>nudges</i> en los pasos intermedios y aplicación estricta de la "regla del pico-final" en la <i>Thank You Page</i>, diseñada para actuar como puente hacia el <i>Onboarding</i>.
                   </p>
                 </div>
 
                 {/* Step 4 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-blue-600 p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
+                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <TrendingUp size={28} className="text-blue-600" />
+                    <TrendingUp size={28} className="text-[#0A192F]" />
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide leading-tight">4. ENTREGA Y SEGUIMIENTO</h4>
-                  <p className="text-sm md:text-base text-blue-50 leading-relaxed font-sans">
+                  <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Escalado del componente <i>checkout</i> a las 12 cabeceras, hiper-localizando *assets* visuales y copys para potenciar la conexión regional, garantizando una UX óptima bajo estándares móviles.
                   </p>
                 </div>
@@ -793,8 +811,8 @@ export default function App() {
             </div>
 
             {/* SECCIÓN GOALS */}
-            <div className="mt-10 p-6 md:p-8 bg-white rounded-3xl border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col md:flex-row items-start gap-5 transition-transform hover:-translate-y-1">
-              <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl shrink-0">
+            <div className="mt-10 p-6 md:p-8 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col md:flex-row items-start gap-5 transition-transform hover:-translate-y-1">
+              <div className="p-4 bg-slate-50 text-[#0A192F] rounded-2xl shrink-0">
                 <Award size={28} strokeWidth={2.5} />
               </div>
               <div>
@@ -803,6 +821,15 @@ export default function App() {
                   Reducción drástica de la tasa de abandono (drop-off) en el embudo transaccional. El rediseño en 3 pasos agilizó el proceso, incrementando significativamente la conversión final y la percepción de seguridad, métricas validadas mediante investigación cualitativa con usuarios reales.
                 </p>
               </div>
+            </div>
+
+            {/* IMAGEN DE RESULTADOS */}
+            <div className="mt-12 flex justify-center items-center w-full">
+              <img 
+                src="https://lh3.googleusercontent.com/d/1_LUNh9NDbV8UX5yOdjXUFGaX8TkOxPzd" 
+                alt="Métricas y Resultados Checkout" 
+                className="w-3/4 md:w-1/3 max-w-sm lg:max-w-md h-auto object-contain"
+              />
             </div>
 
           </div>
@@ -922,7 +949,7 @@ export default function App() {
       `}</style>
       
       {/* Recuerda descomentar esto en producción: */}
-      { <Analytics/> }
+      {/* <Analytics/> */}
     </div>
   );
 }
