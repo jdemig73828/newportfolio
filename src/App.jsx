@@ -672,6 +672,9 @@ export default function App() {
                 <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans">
                   <strong className="text-blue-500">Incremento sostenido en la tasa de éxito de logueos y registros</strong> (estándar y Social Login), impactando directamente en el volumen de usuarios identificados y <strong className="text-blue-500">disparando el crecimiento de nuevas suscripciones</strong> en el periodo de mayo de 2023 a agosto de 2025.
                 </p>
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans mt-3">
+                  <strong className="text-slate-900">Goal de Behavioral Design:</strong> <strong className="text-blue-500">Aplicar el Efecto de Progreso Dotado</strong> para aumentar la motivación del usuario y asegurar que finalice el registro sin percibir un esfuerzo excesivo.
+                </p>
               </div>
             </div>
 
@@ -737,7 +740,7 @@ export default function App() {
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">2. DEFINICIÓN</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
-                    Diagnóstico de fricciones en el embudo de captación e ideación de solutions estructuradas en heurísticas de <i>Behavioral Design</i>, validadas directamente a nivel de negocio.
+                    Diagnóstico de fricciones en el embudo de captación e ideación de soluciones estructuradas en heurísticas de <i>Behavioral Design</i>, validadas directamente a nivel de negocio.
                   </p>
                 </div>
 
@@ -761,7 +764,7 @@ export default function App() {
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide leading-tight">4. ENTREGA Y SEGUIMIENTO</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
-                    Despliegue de los nuevos componentes y establecimiento de un <i>roadmap</i> de iteración continua. Configuración de tests A/B para asegurar la optimización constante en todos canales.
+                    Despliegue de los nuevos componentes y establecimiento de un <i>roadmap</i> de iteración continua. Configuración de tests A/B para asegurar la optimización constante en todos los canales.
                   </p>
                 </div>
 
@@ -777,6 +780,9 @@ export default function App() {
                 <h4 className="text-lg font-heading font-black text-[#0A192F] mb-3 uppercase tracking-widest">Goals</h4>
                 <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans">
                   <strong className="text-blue-500">Aumento exponencial del CTR (Click-Through Rate) y paso a funnel</strong> en todas las cabeceras. La optimización elevó la atribución de marca, clarificó la propuesta de valor y disparó el índice de confianza percibida, validado mediante data cuantitativa y sesiones cualitativas moderadas.
+                </p>
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans mt-3">
+                  <strong className="text-slate-900">Goals de Behavioral Design:</strong> Garantizar la Fluidez Cognitiva en toda la plataforma, asegurando que el usuario aprenda el sistema una sola vez y reduciendo su fatiga de uso recurrente. Generación de impacto y “nudges” para la toma de decisión <strong className="text-blue-500">(destacado de drivers - Sesgo de Escasez - Aversión a la pérdida y aplicación de Psicología de precios)</strong>.
                 </p>
               </div>
             </div>
@@ -883,6 +889,9 @@ export default function App() {
                 <h4 className="text-lg font-heading font-black text-[#0A192F] mb-3 uppercase tracking-widest">Goals</h4>
                 <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans">
                   <strong className="text-blue-500">Reducción drástica de la tasa de abandono (drop-off)</strong> en el embudo transaccional. El rediseño en 3 pasos agilizó el proceso, <strong className="text-blue-500">incrementando significativamente la conversión final</strong> y la percepción de seguridad, métricas validadas mediante investigación cualitativa con usuarios reales y datos cualitativos (Adobe Customer Journey).
+                </p>
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans mt-3">
+                  <strong className="text-slate-900">Goal de Behavioral Design:</strong> <strong className="text-blue-500">Mitigar la Parálisis por Análisis y el sesgo de Aversión a la Pérdida</strong> mediante un diseño que clarifica el valor ganado y las opciones de pago y despeja la incertidumbre ante la cancelación.
                 </p>
               </div>
             </div>
@@ -1021,7 +1030,7 @@ export default function App() {
       `}</style>
       
       {/* Recuerda descomentar esto en producción: */}
-      {<Analytics/>}
+      { <Analytics/>}
     </div>
   );
 }
