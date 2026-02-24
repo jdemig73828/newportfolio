@@ -386,7 +386,7 @@ export default function App() {
               Transformando comportamientos de usuario en <span className="text-white font-semibold italic border-b-2 border-blue-500">valor de negocio cuantificable</span> mediante evidencia científica.
             </p>
             <p className="text-lg md:text-2xl text-slate-400 font-light max-w-2xl leading-relaxed mx-auto lg:mx-0 font-sans text-left">
-              Me muevo en la intersección entre la Influencia Ética, el ciclo de vida del usuario y la conversión. Escríbeme y te detallaré la estrategia detrás de los siguientes proyectos: el reto, la investigación y las decisiones clave.<br/><span className="text-white font-semibold italic border-b-2 border-blue-500">Estoy a tu entera disposición.</span>
+              Me muevo en la intersección entre la Influencia Ética, el ciclo de vida del usuario y la conversión. Escríbeme y te detallaré la estrategia detrás de mis proyectos: el reto, la investigación y las decisiones clave.<br/><span className="text-white font-semibold italic border-b-2 border-blue-500">Estoy a tu entera disposición.</span>
             </p>  
             <div className="flex flex-col items-center lg:items-start gap-8 pt-4 text-left">
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-left">
@@ -559,6 +559,14 @@ export default function App() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* --- CITA PRE-PROCESO --- */}
+          <div className="mt-20 md:mt-28 max-w-4xl mx-auto px-4 text-center">
+            <p className="text-lg md:text-2xl font-light text-slate-500 italic leading-relaxed font-sans">
+              Escríbeme y te detallaré la estrategia detrás de mis proyectos: el reto, la investigación y las decisiones clave. <br/>
+              <span className="font-semibold text-blue-600 not-italic mt-3 inline-block">Estoy a tu entera disposición.</span>
+            </p>
           </div>
 
         </section>
@@ -874,7 +882,7 @@ export default function App() {
               <div>
                 <h4 className="text-lg font-heading font-black text-[#0A192F] mb-3 uppercase tracking-widest">Goals</h4>
                 <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans">
-                  <strong className="text-blue-500">Reducción drástica de la tasa de abandono (drop-off)</strong> en el embudo transaccional. El rediseño en 3 pasos agilizó el proceso, <strong className="text-blue-500">incrementando significativamente la conversión final</strong> y la percepción de seguridad, métricas validadas mediante investigación cualitativa con usuarios reales.
+                  <strong className="text-blue-500">Reducción drástica de la tasa de abandono (drop-off)</strong> en el embudo transaccional. El rediseño en 3 pasos agilizó el proceso, <strong className="text-blue-500">incrementando significativamente la conversión final</strong> y la percepción de seguridad, métricas validadas mediante investigación cualitativa con usuarios reales y datos cualitativos (Adobe Customer Journey).
                 </p>
               </div>
             </div>
@@ -889,6 +897,14 @@ export default function App() {
             </div>
 
           </div>
+
+          {/* NOTA DE CONFIDENCIALIDAD */}
+          <div className="mt-8 max-w-4xl mx-auto px-4 text-center">
+            <p className="text-sm md:text-base text-slate-500 leading-relaxed font-sans">
+              Nota: Por motivos de confidencialidad no puedo ofrecer datos reales sobre métricas. Contacta conmigo para "profundizar" sobre estos y otros procesos de diseño de resultados.
+            </p>
+          </div>
+
         </section>
 
       </main>
@@ -1005,7 +1021,7 @@ export default function App() {
       `}</style>
       
       {/* Recuerda descomentar esto en producción: */}
-      {<Analytics/> }
+      {<Analytics/>}
     </div>
   );
 }
