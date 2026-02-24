@@ -1030,7 +1030,7 @@ export default function App() {
       `}</style>
       
       {/* Recuerda descomentar esto en producción: */}
-      { <Analytics/>}
+      {<Analytics/>}
     </div>
   );
 }
