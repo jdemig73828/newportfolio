@@ -985,7 +985,7 @@ export default function App() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-left">
-           <p className="text-[10px] text-slate-600 font-heading uppercase tracking-widest font-bold text-left text-left">© 2026 JDM-OS | Corporate Excellence v6.4</p>
+           <p className="text-[10px] text-slate-600 font-heading uppercase tracking-widest font-bold text-left text-left">© 2026 Javier de Miguel</p>
         </div>
       </footer>
 
@@ -1002,7 +1002,7 @@ export default function App() {
       `}</style>
       
       {/* Recuerda descomentar esto en producción: */}
-      { <Analytics/> }
+      {<Analytics/> }
     </div>
   );
 }
