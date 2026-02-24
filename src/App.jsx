@@ -161,6 +161,9 @@ const COMPANY_LOGOS = [
 // --- GALLERY IMAGES DATA ---
 const GALLERY_IMAGES = [
   "1xMu5M2Kup6yzPoWUxMLxghYa7xl8aGSU",
+  "1pMZfLkJzKUuTb98VEP-GOVtxn0C5HGIc",
+  "1l-398jT0xUUjey1bKBOVSt3iWhrGVAgH",
+  "1t3BoKS7cRDtE0rvqd4wvACmToDQNWdQc",
   "1VyD5cFTYZK0VaTMM3D_T3T1XQiU1ljsK",
   "1dyEjMI2rEgZuyQ_MlW1m0HZja1iWVjg7",
   "1r3l8--OIOOlj9URQO_BfmmNVaEaIzI9d",
@@ -556,6 +559,14 @@ export default function App() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* --- CITA PRE-PROCESO --- */}
+          <div className="mt-20 md:mt-28 max-w-4xl mx-auto px-4 text-center">
+            <p className="text-lg md:text-2xl font-light text-slate-500 italic leading-relaxed font-sans">
+              Escríbeme y te detallaré la estrategia detrás de mis proyectos: el reto, la investigación y las decisiones clave. <br/>
+              <span className="font-semibold text-blue-600 not-italic mt-3 inline-block">Estoy a tu entera disposición.</span>
+            </p>
           </div>
 
         </section>
@@ -1002,7 +1013,7 @@ export default function App() {
       `}</style>
       
       {/* Recuerda descomentar esto en producción: */}
-      {<Analytics/> }
+      { <Analytics/> }
     </div>
   );
 }
