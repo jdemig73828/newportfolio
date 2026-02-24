@@ -561,14 +561,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* --- CITA PRE-PROCESO --- */}
-          <div className="mt-20 md:mt-28 max-w-4xl mx-auto px-4 text-center">
-            <p className="text-lg md:text-2xl font-light text-slate-500 italic leading-relaxed font-sans">
-              Escríbeme y te detallaré la estrategia detrás de mis proyectos: el reto, la investigación y las decisiones clave. <br/>
-              <span className="font-semibold text-blue-600 not-italic mt-3 inline-block">Estoy a tu entera disposición.</span>
-            </p>
-          </div>
-
         </section>
 
         {/* --- NUEVA SECCIÓN: EL PROCESO --- */}
@@ -670,7 +662,7 @@ export default function App() {
               <div>
                 <h4 className="text-lg font-heading font-black text-[#0A192F] mb-3 uppercase tracking-widest">Goals</h4>
                 <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans">
-                  Incremento sostenido en la tasa de éxito de logueos y registros (estándar y Social Login), impactando directamente en el volumen de usuarios identificados y disparando el crecimiento de nuevas suscripciones en el periodo de mayo de 2023 a agosto de 2025.
+                  <strong className="text-blue-500">Incremento sostenido en la tasa de éxito de logueos y registros</strong> (estándar y Social Login), impactando directamente en el volumen de usuarios identificados y <strong className="text-blue-500">disparando el crecimiento de nuevas suscripciones</strong> en el periodo de mayo de 2023 a agosto de 2025.
                 </p>
               </div>
             </div>
@@ -737,7 +729,7 @@ export default function App() {
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">2. DEFINICIÓN</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
-                    Diagnóstico de fricciones en el embudo de captación e ideación de soluciones estructuradas en heurísticas de <i>Behavioral Design</i>, validadas directamente a nivel de negocio.
+                    Diagnóstico de fricciones en el embudo de captación e ideación de solutions estructuradas en heurísticas de <i>Behavioral Design</i>, validadas directamente a nivel de negocio.
                   </p>
                 </div>
 
@@ -761,7 +753,7 @@ export default function App() {
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide leading-tight">4. ENTREGA Y SEGUIMIENTO</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
-                    Despliegue de los nuevos componentes y establecimiento de un <i>roadmap</i> de iteración continua. Configuración de tests A/B para asegurar la optimización constante en todos los canales.
+                    Despliegue de los nuevos componentes y establecimiento de un <i>roadmap</i> de iteración continua. Configuración de tests A/B para asegurar la optimización constante en todos canales.
                   </p>
                 </div>
 
@@ -776,7 +768,7 @@ export default function App() {
               <div>
                 <h4 className="text-lg font-heading font-black text-[#0A192F] mb-3 uppercase tracking-widest">Goals</h4>
                 <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans">
-                  Aumento exponencial del CTR (Click-Through Rate) y paso a funnel en todas las cabeceras. La optimización elevó la atribución de marca, clarificó la propuesta de valor y disparó el índice de confianza percibida, validado mediante data cuantitativa y sesiones cualitativas moderadas.
+                  <strong className="text-blue-500">Aumento exponencial del CTR (Click-Through Rate) y paso a funnel</strong> en todas las cabeceras. La optimización elevó la atribución de marca, clarificó la propuesta de valor y disparó el índice de confianza percibida, validado mediante data cuantitativa y sesiones cualitativas moderadas.
                 </p>
               </div>
             </div>
@@ -855,7 +847,7 @@ export default function App() {
                   </div>
                   <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">3. DISEÑO</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
-                    Mitigación de la incertidumbre mediante un "steper" y autocompletado de datos conocidos. Inserción táctica de <i>nudges</i> en los pasos intermedios y aplicación estricta de la "regla del pico-final" en la <i>Thank You Page</i>, diseñada para actuar como puente hacia el <i>Onboarding</i>.
+                    Mitigación de la incertidumbre mediante un progresímetro persistente y autocompletado de datos conocidos. Inserción táctica de <i>nudges</i> en los pasos intermedios y aplicación estricta de la "regla del pico-final" en la <i>Thank You Page</i>, diseñada para actuar como puente hacia el <i>Onboarding</i>.
                   </p>
                 </div>
 
@@ -882,7 +874,7 @@ export default function App() {
               <div>
                 <h4 className="text-lg font-heading font-black text-[#0A192F] mb-3 uppercase tracking-widest">Goals</h4>
                 <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans">
-                  Reducción drástica de la tasa de abandono (drop-off) en el embudo transaccional. El rediseño en 3 pasos agilizó el proceso, incrementando significativamente la conversión final y la percepción de seguridad, métricas validadas mediante investigación cualitativa con usuarios reales.
+                  <strong className="text-blue-500">Reducción drástica de la tasa de abandono (drop-off)</strong> en el embudo transaccional. El rediseño en 3 pasos agilizó el proceso, <strong className="text-blue-500">incrementando significativamente la conversión final</strong> y la percepción de seguridad, métricas validadas mediante investigación cualitativa con usuarios reales.
                 </p>
               </div>
             </div>
@@ -1013,7 +1005,7 @@ export default function App() {
       `}</style>
       
       {/* Recuerda descomentar esto en producción: */}
-      { <Analytics/> }
+      {<Analytics/> }
     </div>
   );
 }
