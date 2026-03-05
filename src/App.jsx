@@ -658,7 +658,7 @@ export default function App() {
 
             {/* RESUMEN DE IMPACTO */}
             <div className="mt-8">
-              <h4 className="text-xs md:text-sm font-heading font-bold text-slate-500 uppercase tracking-widest mb-4 ml-2">Resumen de Impacto del Rediseño - UX & Behavioral Design (Consolidado Total Grupo)</h4>
+              <h4 className="text-xs md:text-sm font-heading font-bold text-slate-500 uppercase tracking-widest mb-4 ml-2">Resumen de Impacto del Rediseño - UX & Behavioral Design</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 
                 {/* Impact Card 1 */}
