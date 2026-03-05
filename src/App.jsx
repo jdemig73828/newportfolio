@@ -252,9 +252,6 @@ export default function App() {
   const [showTopBtn, setShowTopBtn] = useState(false);
   
   const scrollContainerRef = useRef(null);
-  const scrollProcesoRef1 = useRef(null); // Ref para el slider de Proceso 1
-  const scrollProcesoRef2 = useRef(null); // Ref para el slider de Proceso 2
-  const scrollProcesoRef3 = useRef(null); // Ref para el slider de Proceso 3
   const scrollGalleryRef = useRef(null); // Ref para la galería
 
   // --- SCROLL SPY & TOP BUTTON LOGIC ---
@@ -299,14 +296,6 @@ export default function App() {
       const { scrollLeft, clientWidth } = scrollContainerRef.current;
       const scrollTo = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
       scrollContainerRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
-    }
-  };
-
-  const scrollProceso = (direction, ref) => {
-    if (ref.current) {
-      const { scrollLeft, clientWidth } = ref.current;
-      const scrollTo = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
-      ref.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
     }
   };
 
@@ -585,76 +574,65 @@ export default function App() {
           <div className="bg-[#EEF2F8] p-8 md:p-12 lg:p-16 rounded-[40px] md:rounded-[60px] border border-slate-200 relative text-left mb-16">
             <div className="mb-12">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-[#0A192F] mb-4 leading-tight">Flujo de login y registro en VOCENTO</h3>
-              <div className="flex items-center gap-3">
-                <span className="bg-slate-200 text-slate-700 font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0">
+              <div className="flex flex-col md:flex-row md:items-center gap-3">
+                <span className="bg-[#0A192F] text-white font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0 w-fit">
                   Necesidad
                 </span>
                 <p className="text-slate-600 text-lg md:text-xl font-medium">Rediseño de flujos para usuarios anónimos y registrados.</p>
               </div>
             </div>
 
-            <div className="relative group text-left">
-              <button 
-                onClick={() => scrollProceso('left', scrollProcesoRef1)}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 z-20 p-4 bg-white rounded-full shadow-xl text-blue-600 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
-              >
-                <ChevronLeft size={24} />
-              </button>
-              <button 
-                onClick={() => scrollProceso('right', scrollProcesoRef1)}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 z-20 p-4 bg-white rounded-full shadow-xl text-blue-600 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
-              >
-                <ChevronRight size={24} />
-              </button>
-
-              <div 
-                ref={scrollProcesoRef1}
-                className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8 pt-4 px-2 items-stretch"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-              >
-                {/* Step 1 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Search size={28} className="text-[#0A192F]" />
-                  </div>
-                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">1. DESCUBRIMIENTO</h4>
+            <div className="flex flex-col gap-4 text-left">
+              {/* Step 1 */}
+              <div className="bg-[#0A192F] p-6 md:p-8 rounded-[30px] shadow-lg flex flex-col md:flex-row items-start md:items-center gap-6 hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden group/card">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                  <Search size={24} className="text-[#0A192F]" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">1. DESCUBRIMIENTO</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Análisis de requisitos con el objetivo estratégico de escalar el volumen de registros y <i>logins</i> en todo el ecosistema digital (Web & App).
                   </p>
                 </div>
+              </div>
 
-                {/* Step 2 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Target size={28} className="text-[#0A192F]" />
-                  </div>
-                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">2. DEFINICIÓN</h4>
+              {/* Step 2 */}
+              <div className="bg-[#0A192F] p-6 md:p-8 rounded-[30px] shadow-lg flex flex-col md:flex-row items-start md:items-center gap-6 hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden group/card">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                  <Target size={24} className="text-[#0A192F]" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">2. DEFINICIÓN</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Auditoría de los flujos existentes e identificación de barreras de conversión. Validación de hipótesis de mejora en alineación continua con los <i>Stakeholders</i>.
                   </p>
                 </div>
+              </div>
 
-                {/* Step 3 */}
-                <div className="min-w-[85vw] md:min-w-[420px] max-w-[500px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Layout size={28} className="text-[#0A192F]" />
-                  </div>
-                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">3. DISEÑO</h4>
+              {/* Step 3 */}
+              <div className="bg-[#0A192F] p-6 md:p-8 rounded-[30px] shadow-lg flex flex-col md:flex-row items-start md:items-center gap-6 hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden group/card">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                  <Layout size={24} className="text-[#0A192F]" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">3. DISEÑO</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Eliminación sistemática de fricción cognitiva: visibilidad clara de la gratuidad, reducción de campos cognitivos ("Baby-Steps") y aplicación de sesgos ("nudges") para guiar al usuario. Todo bajo una estricta estrategia <i>mobile-first</i> (70% del tráfico).
                   </p>
                 </div>
+              </div>
 
-                {/* Step 4 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <TrendingUp size={28} className="text-[#0A192F]" />
-                  </div>
-                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide leading-tight">4. ENTREGA Y SEGUIMIENTO</h4>
+              {/* Step 4 */}
+              <div className="bg-[#0A192F] p-6 md:p-8 rounded-[30px] shadow-lg flex flex-col md:flex-row items-start md:items-center gap-6 hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden group/card">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                  <TrendingUp size={24} className="text-[#0A192F]" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide leading-tight">4. ENTREGA Y SEGUIMIENTO</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Implementación transversal en la plataforma de identidad (EVOLOK) y monitorización analítica (Adobe Customer Journey), logrando un aumento significativo y escalable de usuarios identificados.
                   </p>
@@ -678,6 +656,72 @@ export default function App() {
               </div>
             </div>
 
+            {/* RESUMEN DE IMPACTO */}
+            <div className="mt-8">
+              <h4 className="text-xs md:text-sm font-heading font-bold text-slate-500 uppercase tracking-widest mb-4 ml-2">Resumen de Impacto del Rediseño - UX & Behavioral Design (Consolidado Total Grupo)</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                {/* Impact Card 1 */}
+                <div className="bg-white p-6 md:p-8 rounded-[30px] border border-slate-200 shadow-sm hover:border-blue-200 transition-all group flex flex-col justify-between">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl group-hover:scale-110 transition-transform shrink-0">
+                      <Users size={24} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-heading font-bold text-slate-400 uppercase tracking-tight">Volumen Total (ABC + Medios)</p>
+                      <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">168.747 <span className="text-sm font-medium text-slate-500 font-sans">activos</span></p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Antes (Junio 2023)</span>
+                      <span className="font-bold text-slate-700">118.380 <span className="font-normal text-xs">activos</span></span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2026)</span>
+                      <span className="font-bold text-[#0A192F]">168.747 <span className="font-normal text-xs">activos</span></span>
+                    </div>
+                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
+                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
+                        <TrendingUp size={18} className="shrink-0" /> 
+                        <span>+42,5% <span className="font-medium text-green-600 text-xs block md:inline mt-1 md:mt-0">en capacidad de conversión y retención neta.</span></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Impact Card 2 */}
+                <div className="bg-white p-6 md:p-8 rounded-[30px] border border-slate-200 shadow-sm hover:border-blue-200 transition-all group flex flex-col justify-between">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl group-hover:scale-110 transition-transform shrink-0">
+                      <BarChart3 size={24} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-heading font-bold text-slate-400 uppercase tracking-tight">Valor (ARPU) ABC</p>
+                      <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">98,00 €</p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Antes (Junio 2024)</span>
+                      <span className="font-bold text-slate-700">86,00 €</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Ene 2026)</span>
+                      <span className="font-bold text-[#0A192F]">98,00 €</span>
+                    </div>
+                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
+                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
+                        <TrendingUp size={18} className="shrink-0" /> 
+                        <span>+13,9% <span className="font-medium text-green-600 text-xs block md:inline mt-1 md:mt-0">en la calidad del registro y predisposición al pago.</span></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
             {/* IMAGEN DE RESULTADOS */}
             <div className="mt-12 flex justify-center items-center w-full">
               <img 
@@ -693,81 +737,69 @@ export default function App() {
           <div className="bg-[#EEF2F8] p-8 md:p-12 lg:p-16 rounded-[40px] md:rounded-[60px] border border-slate-200 relative text-left mb-16">
             <div className="mb-12">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-[#0A192F] mb-4 leading-tight">Piezas de captación VOCENTO</h3>
-              <div className="flex items-center gap-3">
-                <span className="bg-slate-200 text-slate-700 font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0">
+              <div className="flex flex-col md:flex-row md:items-center gap-3">
+                <span className="bg-[#0A192F] text-white font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0 w-fit">
                   Necesidad
                 </span>
                 <p className="text-slate-600 text-lg md:text-xl font-medium">Rediseño estratégico de piezas para maximizar la conversión de usuarios.</p>
               </div>
             </div>
 
-            <div className="relative group text-left">
-              <button 
-                onClick={() => scrollProceso('left', scrollProcesoRef2)}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 z-20 p-4 bg-white rounded-full shadow-xl text-blue-600 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
-              >
-                <ChevronLeft size={24} />
-              </button>
-              <button 
-                onClick={() => scrollProceso('right', scrollProcesoRef2)}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 z-20 p-4 bg-white rounded-full shadow-xl text-blue-600 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
-              >
-                <ChevronRight size={24} />
-              </button>
-
-              <div 
-                ref={scrollProcesoRef2}
-                className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8 pt-4 px-2 items-stretch"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-              >
-                {/* Step 1 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Search size={28} className="text-[#0A192F]" />
-                  </div>
-                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">1. DESCUBRIMIENTO</h4>
+            <div className="flex flex-col gap-4 text-left">
+              {/* Step 1 */}
+              <div className="bg-[#0A192F] p-6 md:p-8 rounded-[30px] shadow-lg flex flex-col md:flex-row items-start md:items-center gap-6 hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden group/card">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                  <Search size={24} className="text-[#0A192F]" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">1. DESCUBRIMIENTO</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Adaptación a la nueva arquitectura de monetización (EVOLOK) estableciendo como KPI principal la maximización de la tasa de conversión en el embudo superior.
                   </p>
                 </div>
+              </div>
 
-                {/* Step 2 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Target size={28} className="text-[#0A192F]" />
-                  </div>
-                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">2. DEFINICIÓN</h4>
+              {/* Step 2 */}
+              <div className="bg-[#0A192F] p-6 md:p-8 rounded-[30px] shadow-lg flex flex-col md:flex-row items-start md:items-center gap-6 hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden group/card">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                  <Target size={24} className="text-[#0A192F]" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">2. DEFINICIÓN</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Diagnóstico de fricciones en el embudo de captación e ideación de soluciones estructuradas en heurísticas de <i>Behavioral Design</i>, validadas directamente a nivel de negocio.
                   </p>
                 </div>
+              </div>
 
-                {/* Step 3 */}
-                <div className="min-w-[85vw] md:min-w-[420px] max-w-[500px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Layout size={28} className="text-[#0A192F]" />
-                  </div>
-                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">3. DISEÑO</h4>
+              {/* Step 3 */}
+              <div className="bg-[#0A192F] p-6 md:p-8 rounded-[30px] shadow-lg flex flex-col md:flex-row items-start md:items-center gap-6 hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden group/card">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                  <Layout size={24} className="text-[#0A192F]" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">3. DISEÑO</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Rediseño integral de UI (Paywalls, PopUps, Landings). Aplicación de diseño cognitivo para dirigir la atención: reducción de la sobrecarga de opciones (Ley de Hick), fortalecimiento de influencia social (testimonios expertos) e integración de fuertes <i>drivers</i> de acción (aversión a la pérdida y promesas de cancelación flexible).
                   </p>
                 </div>
+              </div>
 
-                {/* Step 4 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <TrendingUp size={28} className="text-[#0A192F]" />
-                  </div>
-                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide leading-tight">4. ENTREGA Y SEGUIMIENTO</h4>
+              {/* Step 4 */}
+              <div className="bg-[#0A192F] p-6 md:p-8 rounded-[30px] shadow-lg flex flex-col md:flex-row items-start md:items-center gap-6 hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden group/card">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                  <TrendingUp size={24} className="text-[#0A192F]" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide leading-tight">4. ENTREGA Y SEGUIMIENTO</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Despliegue de los nuevos componentes y establecimiento de un <i>roadmap</i> de iteración continua. Configuración de tests A/B para asegurar la optimización constante en todos los canales.
                   </p>
                 </div>
-
               </div>
             </div>
 
@@ -787,6 +819,101 @@ export default function App() {
               </div>
             </div>
 
+            {/* RESUMEN DE IMPACTO - CAPTACIÓN */}
+            <div className="mt-8">
+              <h4 className="text-xs md:text-sm font-heading font-bold text-slate-500 uppercase tracking-widest mb-4 ml-2">Resumen de Impacto UX & Behavioral: Motor de Campañas Globales</h4>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                
+                {/* Impact Card 1 */}
+                <div className="bg-white p-6 md:p-8 rounded-[30px] border border-slate-200 shadow-sm hover:border-blue-200 transition-all group flex flex-col justify-between">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl group-hover:scale-110 transition-transform shrink-0">
+                      <Users size={24} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-heading font-bold text-slate-400 uppercase tracking-tight">Volumen Total Activos</p>
+                      <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">149.493</p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Base (Junio 2023)</span>
+                      <span className="font-bold text-slate-700">118.380</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2025)</span>
+                      <span className="font-bold text-[#0A192F]">149.493</span>
+                    </div>
+                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
+                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
+                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
+                        <span>+26.3% <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">de crecimiento neto en la base global.</span></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Impact Card 2 */}
+                <div className="bg-white p-6 md:p-8 rounded-[30px] border border-slate-200 shadow-sm hover:border-blue-200 transition-all group flex flex-col justify-between">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl group-hover:scale-110 transition-transform shrink-0">
+                      <Zap size={24} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-heading font-bold text-slate-400 uppercase tracking-tight">Altas por Campañas Flash</p>
+                      <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">~4.500 <span className="text-sm font-medium text-slate-500 font-sans">promedio</span></p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Base (Junio 2023)</span>
+                      <span className="font-bold text-slate-700">~2.500 <span className="font-normal text-xs">promedio</span></span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2025)</span>
+                      <span className="font-bold text-[#0A192F]">~4.500 <span className="font-normal text-xs">promedio</span></span>
+                    </div>
+                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
+                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
+                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
+                        <span>+80% <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">en la capacidad de procesamiento de altas en periodos cortos.</span></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Impact Card 3 */}
+                <div className="bg-white p-6 md:p-8 rounded-[30px] border border-slate-200 shadow-sm hover:border-blue-200 transition-all group flex flex-col justify-between">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl group-hover:scale-110 transition-transform shrink-0">
+                      <Target size={24} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-heading font-bold text-slate-400 uppercase tracking-tight">Retención de Usuarios (Medios VOCENTO)</p>
+                      <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">95.032 <span className="text-sm font-medium text-slate-500 font-sans">activos</span></p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Base (Junio 2023)</span>
+                      <span className="font-bold text-slate-700">79.265 <span className="font-normal text-xs">activos</span></span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2025)</span>
+                      <span className="font-bold text-[#0A192F]">95.032 <span className="font-normal text-xs">activos</span></span>
+                    </div>
+                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
+                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
+                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
+                        <span>+19.9% <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">de usuarios fidelizados tras periodos de oferta.</span></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
             {/* IMAGEN DE RESULTADOS */}
             <div className="mt-12 flex justify-center items-center w-full">
               <img 
@@ -802,81 +929,69 @@ export default function App() {
           <div className="bg-[#EEF2F8] p-8 md:p-12 lg:p-16 rounded-[40px] md:rounded-[60px] border border-slate-200 relative text-left">
             <div className="mb-12">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-[#0A192F] mb-4 leading-tight">Rediseño flujo de compra (CheckOut) VOCENTO</h3>
-              <div className="flex items-center gap-3">
-                <span className="bg-slate-200 text-slate-700 font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0">
+              <div className="flex flex-col md:flex-row md:items-center gap-3">
+                <span className="bg-[#0A192F] text-white font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0 w-fit">
                   Necesidad
                 </span>
                 <p className="text-slate-600 text-lg md:text-xl font-medium">Rediseño de flujo de compra transaccional para Móvil y Desktop.</p>
               </div>
             </div>
 
-            <div className="relative group text-left">
-              <button 
-                onClick={() => scrollProceso('left', scrollProcesoRef3)}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 z-20 p-4 bg-white rounded-full shadow-xl text-blue-600 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
-              >
-                <ChevronLeft size={24} />
-              </button>
-              <button 
-                onClick={() => scrollProceso('right', scrollProcesoRef3)}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 z-20 p-4 bg-white rounded-full shadow-xl text-blue-600 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
-              >
-                <ChevronRight size={24} />
-              </button>
-
-              <div 
-                ref={scrollProcesoRef3}
-                className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8 pt-4 px-2 items-stretch"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-              >
-                {/* Step 1 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Search size={28} className="text-[#0A192F]" />
-                  </div>
-                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">1. DESCUBRIMIENTO</h4>
+            <div className="flex flex-col gap-4 text-left">
+              {/* Step 1 */}
+              <div className="bg-[#0A192F] p-6 md:p-8 rounded-[30px] shadow-lg flex flex-col md:flex-row items-start md:items-center gap-6 hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden group/card">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                  <Search size={24} className="text-[#0A192F]" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">1. DESCUBRIMIENTO</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Análisis profundo de los datos del <i>checkout</i> heredado para identificar cuellos de botella y comprender las causas reales de la alta tasa de abandono (<i>drop-off</i>).
                   </p>
                 </div>
+              </div>
 
-                {/* Step 2 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Target size={28} className="text-[#0A192F]" />
-                  </div>
-                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">2. DEFINICIÓN</h4>
+              {/* Step 2 */}
+              <div className="bg-[#0A192F] p-6 md:p-8 rounded-[30px] shadow-lg flex flex-col md:flex-row items-start md:items-center gap-6 hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden group/card">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                  <Target size={24} className="text-[#0A192F]" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">2. DEFINICIÓN</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Conceptualización de un nuevo modelo mental para el usuario. Decisión estratégica de transformar un proceso denso en un embudo lineal y predecible de 3 pasos sencillos.
                   </p>
                 </div>
+              </div>
 
-                {/* Step 3 */}
-                <div className="min-w-[85vw] md:min-w-[420px] max-w-[500px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <Layout size={28} className="text-[#0A192F]" />
-                  </div>
-                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide">3. DISEÑO</h4>
+              {/* Step 3 */}
+              <div className="bg-[#0A192F] p-6 md:p-8 rounded-[30px] shadow-lg flex flex-col md:flex-row items-start md:items-center gap-6 hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden group/card">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                  <Layout size={24} className="text-[#0A192F]" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">3. DISEÑO</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Mitigación de la incertidumbre mediante un progresímetro persistente y autocompletado de datos conocidos. Inserción táctica de <i>nudges</i> en los pasos intermedios y aplicación estricta de la "regla del pico-final" en la <i>Thank You Page</i>, diseñada para actuar como puente hacia el <i>Onboarding</i>.
                   </p>
                 </div>
+              </div>
 
-                {/* Step 4 */}
-                <div className="min-w-[85vw] md:min-w-[400px] max-w-[450px] bg-[#0A192F] p-8 md:p-10 rounded-[40px] shadow-lg snap-center flex flex-col hover:-translate-y-2 transition-transform duration-300 group/card relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
-                    <TrendingUp size={28} className="text-[#0A192F]" />
-                  </div>
-                  <h4 className="text-xl md:text-2xl font-heading font-black text-white mb-6 tracking-wide leading-tight">4. ENTREGA Y SEGUIMIENTO</h4>
+              {/* Step 4 */}
+              <div className="bg-[#0A192F] p-6 md:p-8 rounded-[30px] shadow-lg flex flex-col md:flex-row items-start md:items-center gap-6 hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden group/card">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-inner shrink-0 group-hover/card:scale-110 transition-transform">
+                  <TrendingUp size={24} className="text-[#0A192F]" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide leading-tight">4. ENTREGA Y SEGUIMIENTO</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Escalado del componente <i>checkout</i> a las 12 cabeceras, hiper-localizando *assets* visuales y copys para potenciar la conexión regional, garantizando una UX óptima bajo estándares móviles.
                   </p>
                 </div>
-
               </div>
             </div>
 
@@ -896,6 +1011,196 @@ export default function App() {
               </div>
             </div>
 
+            {/* RESUMEN DE IMPACTO - CHECKOUT */}
+            <div className="mt-8">
+              <h4 className="text-xs md:text-sm font-heading font-bold text-slate-500 uppercase tracking-widest mb-4 ml-2">Resumen de Impacto UX: Optimización del CheckOut</h4>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                
+                {/* Impact Card 1 */}
+                <div className="bg-white p-6 md:p-8 rounded-[30px] border border-slate-200 shadow-sm hover:border-blue-200 transition-all group flex flex-col justify-between">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl group-hover:scale-110 transition-transform shrink-0">
+                      <Users size={24} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-heading font-bold text-slate-400 uppercase tracking-tight">Volumen Total (ABC + Medios)</p>
+                      <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">149.493 <span className="text-sm font-medium text-slate-500 font-sans">activos</span></p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Antes (Junio 2023)</span>
+                      <span className="font-bold text-slate-700">118.380 <span className="font-normal text-xs">activos</span></span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2025)</span>
+                      <span className="font-bold text-[#0A192F]">149.493 <span className="font-normal text-xs">activos</span></span>
+                    </div>
+                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
+                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
+                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
+                        <span>+31.113 <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">activos netos gracias a la reducción de fricción en el pago.</span></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Impact Card 2 */}
+                <div className="bg-white p-6 md:p-8 rounded-[30px] border border-slate-200 shadow-sm hover:border-blue-200 transition-all group flex flex-col justify-between">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl group-hover:scale-110 transition-transform shrink-0">
+                      <Target size={24} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-heading font-bold text-slate-400 uppercase tracking-tight">Volumen Específico ABC</p>
+                      <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">54.461 <span className="text-sm font-medium text-slate-500 font-sans">activos</span></p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Antes (Junio 2023)</span>
+                      <span className="font-bold text-slate-700">39.115 <span className="font-normal text-xs">activos</span></span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2025)</span>
+                      <span className="font-bold text-[#0A192F]">54.461 <span className="font-normal text-xs">activos</span></span>
+                    </div>
+                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
+                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
+                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
+                        <span>+39,2% <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">de crecimiento impulsado por flujos de pago simplificados.</span></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Impact Card 3 */}
+                <div className="bg-white p-6 md:p-8 rounded-[30px] border border-slate-200 shadow-sm hover:border-blue-200 transition-all group flex flex-col justify-between">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl group-hover:scale-110 transition-transform shrink-0">
+                      <BarChart3 size={24} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-heading font-bold text-slate-400 uppercase tracking-tight">Valor (ARPU) Medios</p>
+                      <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">110,64 €</p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Antes (Jun 2024)</span>
+                      <span className="font-bold text-slate-700">110,27 €</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2025)</span>
+                      <span className="font-bold text-[#0A192F]">110,64 €</span>
+                    </div>
+                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
+                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
+                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
+                        <span>Mantenimiento <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">del valor premium a pesar del alto volumen de altas.</span></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            {/* RESUMEN DE IMPACTO - CHURN */}
+            <div className="mt-8">
+              <h4 className="text-xs md:text-sm font-heading font-bold text-slate-500 uppercase tracking-widest mb-4 ml-2">Resumen de Impacto UX: Optimización de Churn</h4>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                
+                {/* Impact Card 1 */}
+                <div className="bg-white p-6 md:p-8 rounded-[30px] border border-slate-200 shadow-sm hover:border-blue-200 transition-all group flex flex-col justify-between">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl group-hover:scale-110 transition-transform shrink-0">
+                      <Users size={24} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-heading font-bold text-slate-400 uppercase tracking-tight">Churn Mensual (Medios VOCENTO)</p>
+                      <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">4,35% <span className="text-sm font-medium text-slate-500 font-sans">de bajas</span></p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Antes (Junio 2023)</span>
+                      <span className="font-bold text-slate-700">5,11% <span className="font-normal text-xs">de bajas</span></span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2025)</span>
+                      <span className="font-bold text-[#0A192F]">4,35% <span className="font-normal text-xs">de bajas</span></span>
+                    </div>
+                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
+                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
+                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
+                        <span>Reducción neta <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">de la fricción post-venta.</span></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Impact Card 2 */}
+                <div className="bg-white p-6 md:p-8 rounded-[30px] border border-slate-200 shadow-sm hover:border-blue-200 transition-all group flex flex-col justify-between">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl group-hover:scale-110 transition-transform shrink-0">
+                      <Target size={24} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-heading font-bold text-slate-400 uppercase tracking-tight">Churn Mensual (ABC)</p>
+                      <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">3,10% <span className="text-sm font-medium text-slate-500 font-sans">de bajas</span></p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Antes (Junio 2023)</span>
+                      <span className="font-bold text-slate-700">4,07% <span className="font-normal text-xs">de bajas</span></span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2025)</span>
+                      <span className="font-bold text-[#0A192F]">3,10% <span className="font-normal text-xs">de bajas</span></span>
+                    </div>
+                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
+                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
+                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
+                        <span>-23,8% <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">en la tasa de abandono tras el registro.</span></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Impact Card 3 */}
+                <div className="bg-white p-6 md:p-8 rounded-[30px] border border-slate-200 shadow-sm hover:border-blue-200 transition-all group flex flex-col justify-between">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl group-hover:scale-110 transition-transform shrink-0">
+                      <BarChart3 size={24} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-heading font-bold text-slate-400 uppercase tracking-tight">Promedio Anual (Grupo)</p>
+                      <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">3,63%</p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Antes (Año 2023)</span>
+                      <span className="font-bold text-slate-700">3,72%</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm pb-2">
+                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Año 2024)</span>
+                      <span className="font-bold text-[#0A192F]">3,63%</span>
+                    </div>
+                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
+                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
+                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
+                        <span>Estabilización <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">del ecosistema bajo el nuevo diseño.</span></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
             {/* IMAGEN DE RESULTADOS */}
             <div className="mt-12 flex justify-center items-center w-full">
               <img 
@@ -905,13 +1210,6 @@ export default function App() {
               />
             </div>
 
-          </div>
-
-          {/* NOTA DE CONFIDENCIALIDAD */}
-          <div className="mt-8 max-w-4xl mx-auto px-4 text-center">
-            <p className="text-sm md:text-base text-slate-500 leading-relaxed font-sans">
-              Nota: Por motivos de confidencialidad no puedo ofrecer datos reales sobre métricas. Contacta conmigo para "profundizar" sobre estos y otros procesos de diseño de resultados.
-            </p>
           </div>
 
         </section>
