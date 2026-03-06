@@ -669,8 +669,11 @@ export default function App() {
                   <strong className="text-blue-500">Incremento sostenido en la tasa de éxito de logueos y registros</strong> (Estándar y Social Login), impactando directamente en el volumen de usuarios identificados y <strong className="text-blue-500">disparando el crecimiento de nuevas suscripciones</strong> en el periodo de mayo de 2023 a agosto de 2025.
                 </p>
                 <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans mt-3">
-                  <strong className="text-slate-900">Goal de Behavioral Design:</strong> <strong className="text-blue-500">Aplicar el Efecto de Progreso Dotado</strong> para aumentar la motivación del usuario y asegurar que finalice el registro sin percibir un esfuerzo excesivo.
+                  <strong className="text-slate-900">Goal de Behavioral Design:</strong>
                 </p>
+                <ul className="list-disc ml-6 mt-3 space-y-1.5 text-sm md:text-base text-blue-600 font-medium font-sans">
+                  <li>Aplicar el Efecto de Progreso Dotado para aumentar la motivación del usuario y asegurar que finalice el registro sin percibir un esfuerzo excesivo.</li>
+                </ul>
               </div>
             </div>
 
@@ -858,8 +861,15 @@ export default function App() {
                   <strong className="text-blue-500">Aumento exponencial del CTR (Click-Through Rate) y paso a funnel</strong> en todas las cabeceras. La optimización elevó la atribución de marca, clarificó la propuesta de valor y disparó el índice de confianza percibida, validado mediante data cuantitativa y sesiones cualitativas moderadas.
                 </p>
                 <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans mt-3">
-                  <strong className="text-slate-900">Goals de Behavioral Design:</strong> Garantizar la Fluidez Cognitiva en toda la plataforma, asegurando que el usuario aprenda el sistema una sola vez y reduciendo su fatiga de uso recurrente. Generación de impacto y “nudges” para la toma de decisión <strong className="text-blue-500">(Destacado de Drivers - Aplicación de Sesgo de Escasez y Urgencia - Copys "emocionales" dirigidos hacia la Aversión a la pérdida e implementación de Psicología de precios y Equivalencias relacionales en piezas de captación)</strong>.
+                  <strong className="text-slate-900">Goals de Behavioral Design:</strong> Garantizar la Fluidez Cognitiva en toda la plataforma, asegurando que el usuario aprenda el sistema una sola vez y reduciendo su fatiga de uso recurrente. Generación de impacto y “nudges” para la toma de decisión:
                 </p>
+                <ul className="list-disc ml-6 mt-3 space-y-1.5 text-sm md:text-base text-blue-600 font-medium font-sans">
+                  <li>Destacado de Drivers</li>
+                  <li>Aplicación de Sesgo de Escasez y Urgencia</li>
+                  <li>Copys "emocionales" dirigidos hacia la Aversión a la pérdida</li>
+                  <li>Implementación de Psicología de precios</li>
+                  <li>Equivalencias relacionales en piezas de captación</li>
+                </ul>
               </div>
             </div>
 
@@ -1089,8 +1099,12 @@ export default function App() {
                   <strong className="text-blue-500">Reducción drástica de la tasa de abandono (drop-off)</strong> en el embudo transaccional. El rediseño en 3 pasos agilizó el proceso, <strong className="text-blue-500">incrementando significativamente la conversión final</strong> y la percepción de seguridad, métricas validadas mediante investigación cualitativa con usuarios reales y datos cualitativos (Adobe Customer Journey).
                 </p>
                 <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans mt-3">
-                  <strong className="text-slate-900">Goal de Behavioral Design:</strong> <strong className="text-blue-500">Mitigar la Parálisis por Análisis y el sesgo de Aversión a la Pérdida</strong> mediante un diseño que clarifica el valor ganado y las opciones de pago y despeja la incertidumbre ante la cancelación.
+                  <strong className="text-slate-900">Goals de Behavioral Design:</strong>
                 </p>
+                <ul className="list-disc ml-6 mt-3 space-y-1.5 text-sm md:text-base text-blue-600 font-medium font-sans">
+                  <li>Mitigar la Parálisis por Análisis, despejando la incertidumbre ante la cancelación</li>
+                  <li>Sesgo de Aversión a la Pérdida mediante un diseño que clarifica el valor ganado</li>
+                </ul>
               </div>
             </div>
 
