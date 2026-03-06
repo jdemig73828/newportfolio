@@ -580,11 +580,11 @@ export default function App() {
 
         {/* --- NUEVA SECCIÓN: EL PROCESO --- */}
         <section id="proceso" className="mb-24 md:mb-32 scroll-mt-32 text-left">
-          <SectionHeader title="Diseñando Resultados" subtitle="El Proceso (End to End)" />
+          <SectionHeader title="Diseñando Resultados" subtitle={<span className="font-bold text-blue-600">El Proceso <span className="font-black">(End to End)</span></span>} />
           
           <div className="mb-12">
             <p className="text-slate-600 text-lg md:text-xl font-light leading-relaxed font-sans max-w-5xl">
-              Puedes ver a continuación cúal ha sido el proceso de diseño de resultados con diferentes necesidades.
+              Explora a continuación cúal ha sido el proceso de diseño de resultados con diferentes necesidades.
             </p>
           </div>
 
@@ -593,7 +593,7 @@ export default function App() {
             <div className="mb-12">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-[#0A192F] mb-4 leading-tight">Flujo de login y registro en VOCENTO</h3>
               <div className="flex flex-col md:flex-row md:items-center gap-3">
-                <span className="bg-[#0A192F] text-white font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0 w-fit">
+                <span className="bg-blue-50 text-blue-700 border border-blue-200 font-heading font-bold px-4 py-1.5 rounded-full text-xs tracking-tight shrink-0 w-fit">
                   Necesidad
                 </span>
                 <p className="text-slate-600 text-lg md:text-xl font-medium">Rediseño de flujos para usuarios anónimos y registrados.</p>
@@ -608,7 +608,7 @@ export default function App() {
                   <Search size={24} className="text-[#0A192F]" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">1. DESCUBRIMIENTO</h4>
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">1. Descubrimiento</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Análisis de requisitos con el objetivo estratégico de escalar el volumen de registros y <i>logins</i> en todo el ecosistema digital (Web & App).
                   </p>
@@ -622,7 +622,7 @@ export default function App() {
                   <Target size={24} className="text-[#0A192F]" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">2. DEFINICIÓN</h4>
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">2. Definición</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Auditoría de los flujos existentes e identificación de barreras de conversión. Validación de hipótesis de mejora en alineación continua con los <i>Stakeholders</i>.
                   </p>
@@ -636,7 +636,7 @@ export default function App() {
                   <Layout size={24} className="text-[#0A192F]" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">3. DISEÑO</h4>
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">3. Diseño</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Eliminación sistemática de fricción cognitiva: visibilidad clara de la gratuidad, reducción de campos cognitivos ("Baby-Steps") y aplicación de sesgos ("nudges") para guiar al usuario. Todo bajo una estricta estrategia <i>mobile-first</i> (70% del tráfico).
                   </p>
@@ -650,7 +650,7 @@ export default function App() {
                   <TrendingUp size={24} className="text-[#0A192F]" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide leading-tight">4. ENTREGA Y SEGUIMIENTO</h4>
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide leading-tight">4. Entrega y seguimiento</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Implementación transversal en la plataforma de identidad (EVOLOK) y monitorización analítica (Adobe Customer Journey), logrando un aumento significativo y escalable de usuarios identificados.
                   </p>
@@ -666,7 +666,7 @@ export default function App() {
               <div>
                 <h4 className="text-lg font-heading font-black text-[#0A192F] mb-3 uppercase tracking-widest">Goals</h4>
                 <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans">
-                  <strong className="text-blue-500">Incremento sostenido en la tasa de éxito de logueos y registros</strong> (estándar y Social Login), impactando directamente en el volumen de usuarios identificados y <strong className="text-blue-500">disparando el crecimiento de nuevas suscripciones</strong> en el periodo de mayo de 2023 a agosto de 2025.
+                  <strong className="text-blue-500">Incremento sostenido en la tasa de éxito de logueos y registros</strong> (Estándar y Social Login), impactando directamente en el volumen de usuarios identificados y <strong className="text-blue-500">disparando el crecimiento de nuevas suscripciones</strong> en el periodo de mayo de 2023 a agosto de 2025.
                 </p>
                 <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans mt-3">
                   <strong className="text-slate-900">Goal de Behavioral Design:</strong> <strong className="text-blue-500">Aplicar el Efecto de Progreso Dotado</strong> para aumentar la motivación del usuario y asegurar que finalice el registro sin percibir un esfuerzo excesivo.
@@ -675,8 +675,8 @@ export default function App() {
             </div>
 
             {/* RESUMEN DE IMPACTO */}
-            <div className="mt-8">
-              <h4 className="text-xs md:text-sm font-heading font-bold text-slate-500 uppercase tracking-widest mb-4 ml-2">Resumen de Impacto del Rediseño - UX & Behavioral Design</h4>
+            <div className="mt-16">
+              <h4 className="text-lg font-heading font-black text-[#0A192F] mb-6 ml-2">Resumen de impacto del rediseño - UX & Behavioral Design</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 
                 {/* Impact Card 1 */}
@@ -690,20 +690,33 @@ export default function App() {
                       <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">168.747 <span className="text-sm font-medium text-slate-500 font-sans">activos</span></p>
                     </div>
                   </div>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Antes (Junio 2023)</span>
-                      <span className="font-bold text-slate-700">118.380 <span className="font-normal text-xs">activos</span></span>
+                  <div className="space-y-4">
+                    <div className="space-y-3">
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-500 font-sans text-xs">Antes (Junio 2023)</span>
+                          <span className="font-bold text-slate-500 text-xs">118.380 <span className="font-normal">activos</span></span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-slate-300 h-1.5 rounded-full" style={{ width: '70%' }}></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-700 font-sans text-xs font-bold">Tras Rediseño (Feb 2026)</span>
+                          <span className="font-bold text-[#0A192F] text-xs">168.747 <span className="font-normal">activos</span></span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-gradient-to-r from-blue-500 to-[#0A192F] h-1.5 rounded-full" style={{ width: '100%' }}></div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center text-sm pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2026)</span>
-                      <span className="font-bold text-[#0A192F]">168.747 <span className="font-normal text-xs">activos</span></span>
-                    </div>
-                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
-                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
-                        <TrendingUp size={18} className="shrink-0" /> 
-                        <span>+42,5% <span className="font-medium text-green-600 text-xs block md:inline mt-1 md:mt-0">en capacidad de conversión y retención neta.</span></span>
-                      </p>
+                    <div className="p-5 bg-gradient-to-br from-blue-800 to-[#0A192F] rounded-2xl mt-5 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-lg border border-blue-700/50">
+                      <TrendingUp size={140} strokeWidth={0.5} className="absolute -bottom-6 -right-4 text-white opacity-5 pointer-events-none" />
+                      <TrendingUp size={32} strokeWidth={2} className="text-blue-500/50 mb-3 relative z-10" />
+                      <span className="text-4xl font-black text-white mb-4 tracking-tighter relative z-10">+42,5%</span>
+                      <div className="w-16 h-px bg-white/20 mb-4 relative z-10"></div>
+                      <span className="text-xs md:text-[13px] font-bold text-blue-300 tracking-tight leading-relaxed relative z-10">En capacidad de conversión y retención neta</span>
                     </div>
                   </div>
                 </div>
@@ -719,20 +732,33 @@ export default function App() {
                       <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">98,00 €</p>
                     </div>
                   </div>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Antes (Junio 2024)</span>
-                      <span className="font-bold text-slate-700">86,00 €</span>
+                  <div className="space-y-4">
+                    <div className="space-y-3">
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-500 font-sans text-xs">Antes (Junio 2024)</span>
+                          <span className="font-bold text-slate-500 text-xs">86,00 €</span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-slate-300 h-1.5 rounded-full" style={{ width: '85%' }}></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-700 font-sans text-xs font-bold">Tras Rediseño (Ene 2026)</span>
+                          <span className="font-bold text-[#0A192F] text-xs">98,00 €</span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-gradient-to-r from-blue-500 to-[#0A192F] h-1.5 rounded-full" style={{ width: '100%' }}></div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center text-sm pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Ene 2026)</span>
-                      <span className="font-bold text-[#0A192F]">98,00 €</span>
-                    </div>
-                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
-                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
-                        <TrendingUp size={18} className="shrink-0" /> 
-                        <span>+13,9% <span className="font-medium text-green-600 text-xs block md:inline mt-1 md:mt-0">en la calidad del registro y predisposición al pago.</span></span>
-                      </p>
+                    <div className="p-5 bg-gradient-to-br from-blue-800 to-[#0A192F] rounded-2xl mt-5 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-lg border border-blue-700/50">
+                      <TrendingUp size={140} strokeWidth={0.5} className="absolute -bottom-6 -right-4 text-white opacity-5 pointer-events-none" />
+                      <TrendingUp size={32} strokeWidth={2} className="text-blue-500/50 mb-3 relative z-10" />
+                      <span className="text-4xl font-black text-white mb-4 tracking-tighter relative z-10">+13,9%</span>
+                      <div className="w-16 h-px bg-white/20 mb-4 relative z-10"></div>
+                      <span className="text-xs md:text-[13px] font-bold text-blue-300 tracking-tight leading-relaxed relative z-10">En la calidad del registro y predisposición al pago</span>
                     </div>
                   </div>
                 </div>
@@ -756,7 +782,7 @@ export default function App() {
             <div className="mb-12">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-[#0A192F] mb-4 leading-tight">Piezas de captación VOCENTO</h3>
               <div className="flex flex-col md:flex-row md:items-center gap-3">
-                <span className="bg-[#0A192F] text-white font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0 w-fit">
+                <span className="bg-blue-50 text-blue-700 border border-blue-200 font-heading font-bold px-4 py-1.5 rounded-full text-xs tracking-tight shrink-0 w-fit">
                   Necesidad
                 </span>
                 <p className="text-slate-600 text-lg md:text-xl font-medium">Rediseño estratégico de piezas para maximizar la conversión de usuarios.</p>
@@ -771,7 +797,7 @@ export default function App() {
                   <Search size={24} className="text-[#0A192F]" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">1. DESCUBRIMIENTO</h4>
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">1. Descubrimiento</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Adaptación a la nueva arquitectura de monetización (EVOLOK) estableciendo como KPI principal la maximización de la tasa de conversión en el embudo superior.
                   </p>
@@ -785,7 +811,7 @@ export default function App() {
                   <Target size={24} className="text-[#0A192F]" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">2. DEFINICIÓN</h4>
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">2. Definición</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Diagnóstico de fricciones en el embudo de captación e ideación de soluciones estructuradas en heurísticas de <i>Behavioral Design</i>, validadas directamente a nivel de negocio.
                   </p>
@@ -799,7 +825,7 @@ export default function App() {
                   <Layout size={24} className="text-[#0A192F]" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">3. DISEÑO</h4>
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">3. Diseño</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Rediseño integral de UI (Paywalls, PopUps, Landings). Aplicación de diseño cognitivo para dirigir la atención: reducción de la sobrecarga de opciones (Ley de Hick), fortalecimiento de influencia social (testimonios expertos) e integración de fuertes <i>drivers</i> de acción (aversión a la pérdida y promesas de cancelación flexible).
                   </p>
@@ -813,7 +839,7 @@ export default function App() {
                   <TrendingUp size={24} className="text-[#0A192F]" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide leading-tight">4. ENTREGA Y SEGUIMIENTO</h4>
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide leading-tight">4. Entrega y seguimiento</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Despliegue de los nuevos componentes y establecimiento de un <i>roadmap</i> de iteración continua. Configuración de tests A/B para asegurar la optimización constante en todos los canales.
                   </p>
@@ -832,14 +858,14 @@ export default function App() {
                   <strong className="text-blue-500">Aumento exponencial del CTR (Click-Through Rate) y paso a funnel</strong> en todas las cabeceras. La optimización elevó la atribución de marca, clarificó la propuesta de valor y disparó el índice de confianza percibida, validado mediante data cuantitativa y sesiones cualitativas moderadas.
                 </p>
                 <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans mt-3">
-                  <strong className="text-slate-900">Goals de Behavioral Design:</strong> Garantizar la Fluidez Cognitiva en toda la plataforma, asegurando que el usuario aprenda el sistema una sola vez y reduciendo su fatiga de uso recurrente. Generación de impacto y “nudges” para la toma de decisión <strong className="text-blue-500">(destacado de drivers - Sesgo de Escasez - Aversión a la pérdida y aplicación de Psicología de precios)</strong>.
+                  <strong className="text-slate-900">Goals de Behavioral Design:</strong> Garantizar la Fluidez Cognitiva en toda la plataforma, asegurando que el usuario aprenda el sistema una sola vez y reduciendo su fatiga de uso recurrente. Generación de impacto y “nudges” para la toma de decisión <strong className="text-blue-500">(Destacado de Drivers - Aplicación de Sesgo de Escasez y Urgencia - Copys "emocionales" dirigidos hacia la Aversión a la pérdida e implementación de Psicología de precios y Equivalencias relacionales en piezas de captación)</strong>.
                 </p>
               </div>
             </div>
 
             {/* RESUMEN DE IMPACTO - CAPTACIÓN */}
-            <div className="mt-8">
-              <h4 className="text-xs md:text-sm font-heading font-bold text-slate-500 uppercase tracking-widest mb-4 ml-2">Resumen de Impacto UX & Behavioral: Motor de Campañas Globales</h4>
+            <div className="mt-16">
+              <h4 className="text-lg font-heading font-black text-[#0A192F] mb-6 ml-2">Resumen de impacto UX & Behavioral: Motor de campañas globales</h4>
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 
                 {/* Impact Card 1 */}
@@ -853,20 +879,33 @@ export default function App() {
                       <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">149.493</p>
                     </div>
                   </div>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Base (Junio 2023)</span>
-                      <span className="font-bold text-slate-700">118.380</span>
+                  <div className="space-y-4">
+                    <div className="space-y-3">
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-500 font-sans text-xs">Base (Junio 2023)</span>
+                          <span className="font-bold text-slate-500 text-xs">118.380</span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-slate-300 h-1.5 rounded-full" style={{ width: '79%' }}></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-700 font-sans text-xs font-bold">Tras Rediseño (Feb 2025)</span>
+                          <span className="font-bold text-[#0A192F] text-xs">149.493</span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-gradient-to-r from-blue-500 to-[#0A192F] h-1.5 rounded-full" style={{ width: '100%' }}></div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center text-sm pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2025)</span>
-                      <span className="font-bold text-[#0A192F]">149.493</span>
-                    </div>
-                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
-                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
-                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
-                        <span>+26.3% <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">de crecimiento neto en la base global.</span></span>
-                      </p>
+                    <div className="p-5 bg-gradient-to-br from-blue-800 to-[#0A192F] rounded-2xl mt-5 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-lg border border-blue-700/50">
+                      <TrendingUp size={140} strokeWidth={0.5} className="absolute -bottom-6 -right-4 text-white opacity-5 pointer-events-none" />
+                      <TrendingUp size={32} strokeWidth={2} className="text-blue-500/50 mb-3 relative z-10" />
+                      <span className="text-4xl font-black text-white mb-4 tracking-tighter relative z-10">+26,3%</span>
+                      <div className="w-16 h-px bg-white/20 mb-4 relative z-10"></div>
+                      <span className="text-xs md:text-[13px] font-bold text-blue-300 tracking-tight leading-relaxed relative z-10">De crecimiento neto en la base global</span>
                     </div>
                   </div>
                 </div>
@@ -882,20 +921,33 @@ export default function App() {
                       <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">~4.500 <span className="text-sm font-medium text-slate-500 font-sans">promedio</span></p>
                     </div>
                   </div>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Base (Junio 2023)</span>
-                      <span className="font-bold text-slate-700">~2.500 <span className="font-normal text-xs">promedio</span></span>
+                  <div className="space-y-4">
+                    <div className="space-y-3">
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-500 font-sans text-xs">Base (Junio 2023)</span>
+                          <span className="font-bold text-slate-500 text-xs">~2.500 <span className="font-normal">promedio</span></span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-slate-300 h-1.5 rounded-full" style={{ width: '55%' }}></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-700 font-sans text-xs font-bold">Tras Rediseño (Feb 2025)</span>
+                          <span className="font-bold text-[#0A192F] text-xs">~4.500 <span className="font-normal">promedio</span></span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-gradient-to-r from-blue-500 to-[#0A192F] h-1.5 rounded-full" style={{ width: '100%' }}></div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center text-sm pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2025)</span>
-                      <span className="font-bold text-[#0A192F]">~4.500 <span className="font-normal text-xs">promedio</span></span>
-                    </div>
-                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
-                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
-                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
-                        <span>+80% <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">en la capacidad de procesamiento de altas en periodos cortos.</span></span>
-                      </p>
+                    <div className="p-5 bg-gradient-to-br from-blue-800 to-[#0A192F] rounded-2xl mt-5 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-lg border border-blue-700/50">
+                      <TrendingUp size={140} strokeWidth={0.5} className="absolute -bottom-6 -right-4 text-white opacity-5 pointer-events-none" />
+                      <TrendingUp size={32} strokeWidth={2} className="text-blue-500/50 mb-3 relative z-10" />
+                      <span className="text-4xl font-black text-white mb-4 tracking-tighter relative z-10">+80%</span>
+                      <div className="w-16 h-px bg-white/20 mb-4 relative z-10"></div>
+                      <span className="text-xs md:text-[13px] font-bold text-blue-300 tracking-tight leading-relaxed relative z-10">En la capacidad de procesamiento de altas en periodos cortos</span>
                     </div>
                   </div>
                 </div>
@@ -911,20 +963,33 @@ export default function App() {
                       <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">95.032 <span className="text-sm font-medium text-slate-500 font-sans">activos</span></p>
                     </div>
                   </div>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Base (Junio 2023)</span>
-                      <span className="font-bold text-slate-700">79.265 <span className="font-normal text-xs">activos</span></span>
+                  <div className="space-y-4">
+                    <div className="space-y-3">
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-500 font-sans text-xs">Base (Junio 2023)</span>
+                          <span className="font-bold text-slate-500 text-xs">79.265 <span className="font-normal">activos</span></span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-slate-300 h-1.5 rounded-full" style={{ width: '83%' }}></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-700 font-sans text-xs font-bold">Tras Rediseño (Feb 2025)</span>
+                          <span className="font-bold text-[#0A192F] text-xs">95.032 <span className="font-normal">activos</span></span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-gradient-to-r from-blue-500 to-[#0A192F] h-1.5 rounded-full" style={{ width: '100%' }}></div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center text-sm pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2025)</span>
-                      <span className="font-bold text-[#0A192F]">95.032 <span className="font-normal text-xs">activos</span></span>
-                    </div>
-                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
-                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
-                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
-                        <span>+19.9% <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">de usuarios fidelizados tras periodos de oferta.</span></span>
-                      </p>
+                    <div className="p-5 bg-gradient-to-br from-blue-800 to-[#0A192F] rounded-2xl mt-5 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-lg border border-blue-700/50">
+                      <TrendingUp size={140} strokeWidth={0.5} className="absolute -bottom-6 -right-4 text-white opacity-5 pointer-events-none" />
+                      <TrendingUp size={32} strokeWidth={2} className="text-blue-500/50 mb-3 relative z-10" />
+                      <span className="text-4xl font-black text-white mb-4 tracking-tighter relative z-10">+19,9%</span>
+                      <div className="w-16 h-px bg-white/20 mb-4 relative z-10"></div>
+                      <span className="text-xs md:text-[13px] font-bold text-blue-300 tracking-tight leading-relaxed relative z-10">De usuarios fidelizados tras periodos de oferta</span>
                     </div>
                   </div>
                 </div>
@@ -948,7 +1013,7 @@ export default function App() {
             <div className="mb-12">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-[#0A192F] mb-4 leading-tight">Rediseño flujo de compra (CheckOut) VOCENTO</h3>
               <div className="flex flex-col md:flex-row md:items-center gap-3">
-                <span className="bg-[#0A192F] text-white font-heading font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest shrink-0 w-fit">
+                <span className="bg-blue-50 text-blue-700 border border-blue-200 font-heading font-bold px-4 py-1.5 rounded-full text-xs tracking-tight shrink-0 w-fit">
                   Necesidad
                 </span>
                 <p className="text-slate-600 text-lg md:text-xl font-medium">Rediseño de flujo de compra transaccional para Móvil y Desktop.</p>
@@ -963,7 +1028,7 @@ export default function App() {
                   <Search size={24} className="text-[#0A192F]" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">1. DESCUBRIMIENTO</h4>
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">1. Descubrimiento</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Análisis profundo de los datos del <i>checkout</i> heredado para identify cuellos de botella y comprender las causas reales de la alta tasa de abandono (<i>drop-off</i>).
                   </p>
@@ -977,7 +1042,7 @@ export default function App() {
                   <Target size={24} className="text-[#0A192F]" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">2. DEFINICIÓN</h4>
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">2. Definición</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Conceptualización de un nuevo modelo mental para el usuario. Decisión estratégica de transformar un proceso denso en un embudo lineal y predecible de 3 pasos sencillos.
                   </p>
@@ -991,7 +1056,7 @@ export default function App() {
                   <Layout size={24} className="text-[#0A192F]" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">3. DISEÑO</h4>
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">3. Diseño</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Mitigación de la incertidumbre mediante un progresímetro persistente y autocompletado de datos conocidos. Inserción táctica de <i>nudges</i> en los pasos intermedios y aplicación estricta de la "regla del pico-final" en la <i>Thank You Page</i>, diseñada para actuar como puente hacia el <i>Onboarding</i>.
                   </p>
@@ -1005,7 +1070,7 @@ export default function App() {
                   <TrendingUp size={24} className="text-[#0A192F]" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide leading-tight">4. ENTREGA Y SEGUIMIENTO</h4>
+                  <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide leading-tight">4. Entrega y seguimiento</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
                     Escalado del componente <i>checkout</i> a las 12 cabeceras, hiper-localizando *assets* visuales y copys para potenciar la conexión regional, garantizando una UX óptima bajo estándares móviles.
                   </p>
@@ -1030,8 +1095,8 @@ export default function App() {
             </div>
 
             {/* RESUMEN DE IMPACTO - CHECKOUT */}
-            <div className="mt-8">
-              <h4 className="text-xs md:text-sm font-heading font-bold text-slate-500 uppercase tracking-widest mb-4 ml-2">Resumen de Impacto UX: Optimización del CheckOut</h4>
+            <div className="mt-16">
+              <h4 className="text-lg font-heading font-black text-[#0A192F] mb-6 ml-2">Resumen de impacto UX: Optimización del CheckOut</h4>
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 
                 {/* Impact Card 1 */}
@@ -1045,20 +1110,33 @@ export default function App() {
                       <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">149.493 <span className="text-sm font-medium text-slate-500 font-sans">activos</span></p>
                     </div>
                   </div>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Antes (Junio 2023)</span>
-                      <span className="font-bold text-slate-700">118.380 <span className="font-normal text-xs">activos</span></span>
+                  <div className="space-y-4">
+                    <div className="space-y-3">
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-500 font-sans text-xs">Antes (Junio 2023)</span>
+                          <span className="font-bold text-slate-500 text-xs">118.380 <span className="font-normal">activos</span></span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-slate-300 h-1.5 rounded-full" style={{ width: '79%' }}></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-700 font-sans text-xs font-bold">Tras Rediseño (Feb 2025)</span>
+                          <span className="font-bold text-[#0A192F] text-xs">149.493 <span className="font-normal">activos</span></span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-gradient-to-r from-blue-500 to-[#0A192F] h-1.5 rounded-full" style={{ width: '100%' }}></div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center text-sm pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2025)</span>
-                      <span className="font-bold text-[#0A192F]">149.493 <span className="font-normal text-xs">activos</span></span>
-                    </div>
-                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
-                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
-                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
-                        <span>+31.113 <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">activos netos gracias a la reducción de fricción en el pago.</span></span>
-                      </p>
+                    <div className="p-5 bg-gradient-to-br from-blue-800 to-[#0A192F] rounded-2xl mt-5 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-lg border border-blue-700/50">
+                      <TrendingUp size={140} strokeWidth={0.5} className="absolute -bottom-6 -right-4 text-white opacity-5 pointer-events-none" />
+                      <TrendingUp size={32} strokeWidth={2} className="text-blue-500/50 mb-3 relative z-10" />
+                      <span className="text-4xl font-black text-white mb-4 tracking-tighter relative z-10">+31.113</span>
+                      <div className="w-16 h-px bg-white/20 mb-4 relative z-10"></div>
+                      <span className="text-xs md:text-[13px] font-bold text-blue-300 tracking-tight leading-relaxed relative z-10">Activos netos gracias a la reducción de fricción en el pago</span>
                     </div>
                   </div>
                 </div>
@@ -1074,20 +1152,33 @@ export default function App() {
                       <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">54.461 <span className="text-sm font-medium text-slate-500 font-sans">activos</span></p>
                     </div>
                   </div>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Antes (Junio 2023)</span>
-                      <span className="font-bold text-slate-700">39.115 <span className="font-normal text-xs">activos</span></span>
+                  <div className="space-y-4">
+                    <div className="space-y-3">
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-500 font-sans text-xs">Antes (Junio 2023)</span>
+                          <span className="font-bold text-slate-500 text-xs">39.115 <span className="font-normal">activos</span></span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-slate-300 h-1.5 rounded-full" style={{ width: '72%' }}></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-700 font-sans text-xs font-bold">Tras Rediseño (Feb 2025)</span>
+                          <span className="font-bold text-[#0A192F] text-xs">54.461 <span className="font-normal">activos</span></span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-gradient-to-r from-blue-500 to-[#0A192F] h-1.5 rounded-full" style={{ width: '100%' }}></div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center text-sm pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2025)</span>
-                      <span className="font-bold text-[#0A192F]">54.461 <span className="font-normal text-xs">activos</span></span>
-                    </div>
-                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
-                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
-                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
-                        <span>+39,2% <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">de crecimiento impulsado por flujos de pago simplificados.</span></span>
-                      </p>
+                    <div className="p-5 bg-gradient-to-br from-blue-800 to-[#0A192F] rounded-2xl mt-5 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-lg border border-blue-700/50">
+                      <TrendingUp size={140} strokeWidth={0.5} className="absolute -bottom-6 -right-4 text-white opacity-5 pointer-events-none" />
+                      <TrendingUp size={32} strokeWidth={2} className="text-blue-500/50 mb-3 relative z-10" />
+                      <span className="text-4xl font-black text-white mb-4 tracking-tighter relative z-10">+39,2%</span>
+                      <div className="w-16 h-px bg-white/20 mb-4 relative z-10"></div>
+                      <span className="text-xs md:text-[13px] font-bold text-blue-300 tracking-tight leading-relaxed relative z-10">De crecimiento impulsado por flujos de pago simplificados</span>
                     </div>
                   </div>
                 </div>
@@ -1103,20 +1194,33 @@ export default function App() {
                       <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">110,64 €</p>
                     </div>
                   </div>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Antes (Jun 2024)</span>
-                      <span className="font-bold text-slate-700">110,27 €</span>
+                  <div className="space-y-4">
+                    <div className="space-y-3">
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-500 font-sans text-xs">Antes (Jun 2024)</span>
+                          <span className="font-bold text-slate-500 text-xs">110,27 €</span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-slate-300 h-1.5 rounded-full" style={{ width: '99%' }}></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-700 font-sans text-xs font-bold">Tras Rediseño (Feb 2025)</span>
+                          <span className="font-bold text-[#0A192F] text-xs">110,64 €</span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-gradient-to-r from-blue-500 to-[#0A192F] h-1.5 rounded-full" style={{ width: '100%' }}></div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center text-sm pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2025)</span>
-                      <span className="font-bold text-[#0A192F]">110,64 €</span>
-                    </div>
-                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
-                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
-                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
-                        <span>Mantenimiento <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">del valor premium a pesar del alto volumen de altas.</span></span>
-                      </p>
+                    <div className="p-5 bg-gradient-to-br from-blue-800 to-[#0A192F] rounded-2xl mt-5 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-lg border border-blue-700/50">
+                      <TrendingUp size={140} strokeWidth={0.5} className="absolute -bottom-6 -right-4 text-white opacity-5 pointer-events-none" />
+                      <TrendingUp size={32} strokeWidth={2} className="text-blue-500/50 mb-3 relative z-10" />
+                      <span className="text-3xl font-black text-white mb-4 tracking-tight relative z-10">Mantenimiento</span>
+                      <div className="w-16 h-px bg-white/20 mb-4 relative z-10"></div>
+                      <span className="text-xs md:text-[13px] font-bold text-blue-300 tracking-tight leading-relaxed relative z-10">Del valor premium a pesar del alto volumen de altas</span>
                     </div>
                   </div>
                 </div>
@@ -1125,8 +1229,8 @@ export default function App() {
             </div>
 
             {/* RESUMEN DE IMPACTO - CHURN */}
-            <div className="mt-8">
-              <h4 className="text-xs md:text-sm font-heading font-bold text-slate-500 uppercase tracking-widest mb-4 ml-2">Resumen de Impacto UX: Optimización de Churn</h4>
+            <div className="mt-16">
+              <h4 className="text-lg font-heading font-black text-[#0A192F] mb-6 ml-2">Resumen de impacto UX: Optimización de Churn</h4>
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 
                 {/* Impact Card 1 */}
@@ -1140,20 +1244,33 @@ export default function App() {
                       <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">4,35% <span className="text-sm font-medium text-slate-500 font-sans">de bajas</span></p>
                     </div>
                   </div>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Antes (Junio 2023)</span>
-                      <span className="font-bold text-slate-700">5,11% <span className="font-normal text-xs">de bajas</span></span>
+                  <div className="space-y-4">
+                    <div className="space-y-3">
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-500 font-sans text-xs">Antes (Junio 2023)</span>
+                          <span className="font-bold text-slate-500 text-xs">5,11% <span className="font-normal">de bajas</span></span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-slate-300 h-1.5 rounded-full" style={{ width: '100%' }}></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-700 font-sans text-xs font-bold">Tras Rediseño (Feb 2025)</span>
+                          <span className="font-bold text-[#0A192F] text-xs">4,35% <span className="font-normal">de bajas</span></span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-gradient-to-r from-blue-500 to-[#0A192F] h-1.5 rounded-full" style={{ width: '85%' }}></div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center text-sm pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2025)</span>
-                      <span className="font-bold text-[#0A192F]">4,35% <span className="font-normal text-xs">de bajas</span></span>
-                    </div>
-                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
-                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
-                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
-                        <span>Reducción neta <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">de la fricción post-venta.</span></span>
-                      </p>
+                    <div className="p-5 bg-gradient-to-br from-blue-800 to-[#0A192F] rounded-2xl mt-5 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-lg border border-blue-700/50">
+                      <TrendingUp size={140} strokeWidth={0.5} className="absolute -bottom-6 -right-4 text-white opacity-5 pointer-events-none" />
+                      <TrendingUp size={32} strokeWidth={2} className="text-blue-500/50 mb-3 relative z-10" />
+                      <span className="text-3xl font-black text-white mb-4 tracking-tight relative z-10">Reducción neta</span>
+                      <div className="w-16 h-px bg-white/20 mb-4 relative z-10"></div>
+                      <span className="text-xs md:text-[13px] font-bold text-blue-300 tracking-tight leading-relaxed relative z-10">De la fricción post-venta</span>
                     </div>
                   </div>
                 </div>
@@ -1169,20 +1286,33 @@ export default function App() {
                       <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">3,10% <span className="text-sm font-medium text-slate-500 font-sans">de bajas</span></p>
                     </div>
                   </div>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Antes (Junio 2023)</span>
-                      <span className="font-bold text-slate-700">4,07% <span className="font-normal text-xs">de bajas</span></span>
+                  <div className="space-y-4">
+                    <div className="space-y-3">
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-500 font-sans text-xs">Antes (Junio 2023)</span>
+                          <span className="font-bold text-slate-500 text-xs">4,07% <span className="font-normal">de bajas</span></span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-slate-300 h-1.5 rounded-full" style={{ width: '100%' }}></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-700 font-sans text-xs font-bold">Tras Rediseño (Feb 2025)</span>
+                          <span className="font-bold text-[#0A192F] text-xs">3,10% <span className="font-normal">de bajas</span></span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-gradient-to-r from-blue-500 to-[#0A192F] h-1.5 rounded-full" style={{ width: '76%' }}></div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center text-sm pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Feb 2025)</span>
-                      <span className="font-bold text-[#0A192F]">3,10% <span className="font-normal text-xs">de bajas</span></span>
-                    </div>
-                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
-                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
-                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
-                        <span>-23,8% <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">en la tasa de abandono tras el registro.</span></span>
-                      </p>
+                    <div className="p-5 bg-gradient-to-br from-blue-800 to-[#0A192F] rounded-2xl mt-5 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-lg border border-blue-700/50">
+                      <TrendingUp size={140} strokeWidth={0.5} className="absolute -bottom-6 -right-4 text-white opacity-5 pointer-events-none" />
+                      <TrendingUp size={32} strokeWidth={2} className="text-blue-500/50 mb-3 relative z-10" />
+                      <span className="text-4xl font-black text-white mb-4 tracking-tighter relative z-10">-23,8%</span>
+                      <div className="w-16 h-px bg-white/20 mb-4 relative z-10"></div>
+                      <span className="text-xs md:text-[13px] font-bold text-blue-300 tracking-tight leading-relaxed relative z-10">En la tasa de abandono tras el registro</span>
                     </div>
                   </div>
                 </div>
@@ -1198,20 +1328,33 @@ export default function App() {
                       <p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading">3,63%</p>
                     </div>
                   </div>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Antes (Año 2023)</span>
-                      <span className="font-bold text-slate-700">3,72%</span>
+                  <div className="space-y-4">
+                    <div className="space-y-3">
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-500 font-sans text-xs">Antes (Año 2023)</span>
+                          <span className="font-bold text-slate-500 text-xs">3,72%</span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-slate-300 h-1.5 rounded-full" style={{ width: '100%' }}></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex justify-between items-end mb-1.5">
+                          <span className="text-slate-700 font-sans text-xs font-bold">Tras Rediseño (Año 2024)</span>
+                          <span className="font-bold text-[#0A192F] text-xs">3,63%</span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5">
+                          <div className="bg-gradient-to-r from-blue-500 to-[#0A192F] h-1.5 rounded-full" style={{ width: '97%' }}></div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center text-sm pb-2">
-                      <span className="text-slate-500 font-sans text-xs">Tras Rediseño (Año 2024)</span>
-                      <span className="font-bold text-[#0A192F]">3,63%</span>
-                    </div>
-                    <div className="p-3 bg-green-50 rounded-xl border border-green-100 mt-2">
-                      <p className="text-sm font-bold text-green-700 flex items-start gap-2 leading-tight">
-                        <TrendingUp size={18} className="shrink-0 mt-0.5" /> 
-                        <span>Estabilización <span className="font-medium text-green-600 text-xs block md:inline lg:block mt-1 lg:mt-1 md:mt-0">del ecosistema bajo el nuevo diseño.</span></span>
-                      </p>
+                    <div className="p-5 bg-gradient-to-br from-blue-800 to-[#0A192F] rounded-2xl mt-5 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-lg border border-blue-700/50">
+                      <TrendingUp size={140} strokeWidth={0.5} className="absolute -bottom-6 -right-4 text-white opacity-5 pointer-events-none" />
+                      <TrendingUp size={32} strokeWidth={2} className="text-blue-500/50 mb-3 relative z-10" />
+                      <span className="text-3xl font-black text-white mb-4 tracking-tight relative z-10">Estabilización</span>
+                      <div className="w-16 h-px bg-white/20 mb-4 relative z-10"></div>
+                      <span className="text-xs md:text-[13px] font-bold text-blue-300 tracking-tight leading-relaxed relative z-10">Del ecosistema bajo el nuevo diseño</span>
                     </div>
                   </div>
                 </div>
@@ -1344,7 +1487,6 @@ export default function App() {
         .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(37, 99, 235, 0.4); }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
       `}</style>
-
       {/* Recuerda descomentar esto en producción: */}
       {<Analytics/>}
     </div>
