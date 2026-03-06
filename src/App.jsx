@@ -379,21 +379,10 @@ export default function App() {
             </p>  
             <div className="flex flex-col items-center lg:items-start gap-8 pt-4 text-left">
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-left">
-                <a href="#evidencias" className="flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-2xl font-heading font-bold hover:bg-blue-500 transition-all shadow-xl shadow-blue-500/20 text-sm tracking-wide text-left">
-                  Explorar Evidencias <ArrowRight size={18} />
-                </a>
-                <a href="https://www.linkedin.com/in/Javier-de-miguel-torres" target="_blank" className="flex items-center gap-2 border border-slate-700 px-8 py-4 rounded-2xl font-heading font-bold hover:bg-slate-800 transition-all text-sm tracking-wide text-left">
-                  <Linkedin size={18} /> LinkedIn
+                <a href="#proceso" className="flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-2xl font-heading font-bold hover:bg-blue-500 transition-all shadow-xl shadow-blue-500/20 text-sm tracking-wide text-left">
+                  Explorar Procesos <ArrowRight size={18} />
                 </a>
               </div>
-              
-              <a 
-                href="https://drive.google.com/file/d/1M6yrhdBHCVU4ZzVONCtD9xVAgzmCWqbZ/view?usp=sharing" 
-                target="_blank"
-                className="text-sm font-bold text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2 underline decoration-slate-600 underline-offset-8 font-sans mb-4 lg:mb-0 text-left"
-              >
-                <FileText size={18} /> ver CV
-              </a>
             </div>
           </div>
           
@@ -420,18 +409,30 @@ export default function App() {
       <main className="max-w-7xl mx-auto px-4 md:px-6 -translate-y-8 md:translate-y-[-5rem]">
         
         {/* SKILLS DASHBOARD */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-24 md:mb-32 text-left">
-           {[
-             { label: "Behavioral Design", val: "95%", icon: <Brain /> },
-             { label: "CRO & Funnels", val: "92%", icon: <TrendingUp /> },
-             { label: "Design Systems", val: "90%", icon: <Component /> },
-             { label: "AI Integration", val: "85%", icon: <Zap /> }
-           ].map((s, i) => (
-             <div key={i} className="bg-white p-6 md:p-8 rounded-[30px] border border-slate-100 shadow-sm flex items-center gap-5 hover:border-blue-200 transition-all group text-left">
-                <div className="text-blue-600 group-hover:scale-110 transition-transform">{s.icon}</div>
-                <div className="text-left"><p className="text-[10px] font-heading font-bold text-slate-400 uppercase tracking-tight text-left">{s.label}</p><p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading text-left">{s.val}</p></div>
-             </div>
-           ))}
+        <section className="mb-24 md:mb-32 text-left">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+             {[
+               { label: "Behavioral Design", val: "95%", icon: <Brain /> },
+               { label: "CRO & Funnels", val: "92%", icon: <TrendingUp /> },
+               { label: "Design Systems", val: "90%", icon: <Component /> },
+               { label: "AI Integration", val: "85%", icon: <Zap /> }
+             ].map((s, i) => (
+               <div key={i} className="bg-white p-6 md:p-8 rounded-[30px] border border-slate-100 shadow-sm flex items-center gap-5 hover:border-blue-200 transition-all group text-left">
+                  <div className="text-blue-600 group-hover:scale-110 transition-transform">{s.icon}</div>
+                  <div className="text-left"><p className="text-[10px] font-heading font-bold text-slate-400 uppercase tracking-tight text-left">{s.label}</p><p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading text-left">{s.val}</p></div>
+               </div>
+             ))}
+          </div>
+          
+          <div className="flex justify-center relative z-10 px-4 text-left">
+            <a 
+              href="https://www.linkedin.com/in/Javier-de-miguel-torres" 
+              target="_blank"
+              className="flex items-center gap-3 border border-slate-200 bg-white text-slate-600 px-10 py-5 rounded-[2rem] font-heading font-bold hover:border-blue-400 hover:text-blue-600 hover:bg-blue-50 transition-all shadow-sm text-sm tracking-wide"
+            >
+              LinkedIn <Linkedin size={20} className="text-slate-400" />
+            </a>
+          </div>
         </section>
 
         {/* --- TRAYECTORIA --- */}
@@ -462,13 +463,20 @@ export default function App() {
               ))}
             </div>
             
-            <div className="flex justify-center mt-20 relative z-10 px-4 text-left">
+            <div className="flex flex-col items-center justify-center mt-20 relative z-10 px-4 text-center gap-6">
               <a 
                 href="https://www.linkedin.com/in/javier-de-miguel-torres/details/experience/" 
                 target="_blank"
                 className="flex items-center gap-3 border border-slate-200 bg-white text-slate-600 px-10 py-5 rounded-[2rem] font-heading font-bold hover:border-blue-400 hover:text-blue-600 hover:bg-blue-50 transition-all shadow-sm text-sm tracking-wide"
               >
-                ver más experiencias <Linkedin size={20} className="text-slate-400" />
+                Ver más experiencias <Linkedin size={20} className="text-slate-400" />
+              </a>
+              <a 
+                href="https://drive.google.com/file/d/1M6yrhdBHCVU4ZzVONCtD9xVAgzmCWqbZ/view?usp=sharing" 
+                target="_blank"
+                className="text-sm font-bold text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2 font-sans mt-4"
+              >
+                <FileText size={18} /> Ver CV
               </a>
             </div>
           </div>
@@ -478,27 +486,15 @@ export default function App() {
         <section id="evidencias" className="mb-24 md:mb-32 scroll-mt-32 text-left">
           <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center mb-16 gap-10 text-left">
             <SectionHeader title="Selección Visual de Interfaces" subtitle="Capturas reales que documentan soluciones técnicas y procesos de alto nivel." />
-            <div className="flex flex-wrap gap-6 justify-start md:justify-end w-full lg:w-auto items-center text-left">
-              <a href="https://www.linkedin.com/in/javier-de-miguel-torres/details/experience/urn:li:fsd_profilePosition:(ACoAAAHiTVABe6KeNEe--kkZtNyynUCxBaWlRuA,2252765168)/treasury/" target="_blank" className="flex items-center gap-2 border-2 border-blue-600 text-blue-600 bg-white px-6 py-3.5 rounded-2xl font-heading font-bold hover:bg-blue-600 hover:text-white transition-all text-xs tracking-wider uppercase text-left">lo más actual <ArrowRight size={16} /></a>
-              <a href="https://drive.google.com/file/d/1gIM9M-mlU6RepB05VvD0JUcCCaqpzIyu/view?usp=sharing" target="_blank" className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3.5 rounded-2xl font-heading font-bold hover:bg-blue-500 transition-all shadow-lg text-xs tracking-wider uppercase text-left"><FileText size={18} /> Portafolio PDF</a>
-              
-              <a 
-                href="https://drive.google.com/file/d/1ooQJZeeJYsTLYn11CkeaxN24EEf5orbb/view?usp=sharing" 
-                target="_blank" 
-                className="text-sm font-heading font-bold text-slate-500 hover:text-blue-600 transition-colors flex items-center gap-2 underline underline-offset-4 decoration-slate-300 hover:decoration-blue-400 text-left"
-              >
-                <Component size={18} /> Documentación de componentes
-              </a>
-            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 text-left">
             {PROJECTS_PORTFOLIO.map((p, idx) => (
-              <div key={idx} className="bg-white rounded-[45px] md:rounded-[55px] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:border-blue-200 transition-all group flex flex-col h-full relative text-left">
+              <div key={idx} className="bg-white rounded-[45px] md:rounded-[55px] overflow-hidden border border-slate-100 shadow-sm hover:border-blue-200 hover:shadow-2xl transition-all group flex flex-col h-full relative text-left">
                 <div className="h-64 md:h-80 bg-slate-100 relative overflow-hidden text-left">
                   <img src={p.imageUrl} alt={p.title} className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F]/70 via-transparent to-transparent"></div>
-                  <div className="absolute top-6 left-6 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] font-heading font-bold text-white border border-white/20 font-heading">PDF {p.pages}</div>
+                  <div className="absolute top-6 left-6 px-3 py-1 bg-blue-600 rounded-full text-[10px] font-heading font-bold text-white border border-blue-500 shadow-md whitespace-nowrap">PDF {p.pages}</div>
                   <div className="absolute bottom-6 right-6 text-white/50">{p.device === 'mobile' ? <Smartphone size={22} /> : <Monitor size={22} />}</div>
                 </div>
                 <div className="p-8 md:p-12 flex-1 text-left">
@@ -515,6 +511,21 @@ export default function App() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* --- BOTONES DE ENLACES (PORTAFOLIO, ACTUALIDAD, DOCS) --- */}
+          <div className="flex flex-wrap gap-6 justify-center items-center mt-16 w-full text-center">
+            <a href="https://drive.google.com/file/d/1gIM9M-mlU6RepB05VvD0JUcCCaqpzIyu/view?usp=sharing" target="_blank" className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3.5 rounded-2xl font-heading font-bold hover:bg-blue-500 transition-all shadow-lg text-xs tracking-wider uppercase"><FileText size={18} /> Portafolio PDF</a>
+            
+            <a href="https://www.linkedin.com/in/javier-de-miguel-torres/details/experience/urn:li:fsd_profilePosition:(ACoAAAHiTVABe6KeNEe--kkZtNyynUCxBaWlRuA,2252765168)/treasury/" target="_blank" className="flex items-center gap-2 border-2 border-blue-600 text-blue-600 bg-white px-6 py-3.5 rounded-2xl font-heading font-bold hover:bg-blue-600 hover:text-white transition-all text-xs tracking-wider uppercase">lo más actual <ArrowRight size={16} /></a>
+            
+            <a 
+              href="https://drive.google.com/file/d/1ooQJZeeJYsTLYn11CkeaxN24EEf5orbb/view?usp=sharing" 
+              target="_blank" 
+              className="text-sm font-heading font-bold text-slate-500 hover:text-blue-600 transition-colors flex items-center gap-2 underline underline-offset-4 decoration-slate-300 hover:decoration-blue-400"
+            >
+              <Component size={18} /> Documentación de componentes
+            </a>
           </div>
 
           {/* --- GALERÍA DE EVIDENCIAS --- */}
@@ -551,11 +562,18 @@ export default function App() {
           </div>
 
           {/* --- CITA PRE-PROCESO --- */}
-          <div className="mt-20 md:mt-28 max-w-4xl mx-auto px-4 text-center">
-            <p className="text-lg md:text-2xl font-light text-slate-500 italic leading-relaxed font-sans">
-              Escríbeme y te detallaré la estrategia detrás de mis proyectos: el reto, la investigación y las decisiones clave. <br/>
-              <span className="font-semibold text-blue-600 not-italic mt-3 inline-block">Estoy a tu entera disposición.</span>
-            </p>
+          <div className="mt-20 md:mt-28 max-w-4xl mx-auto px-8 md:px-16 text-center flex flex-col items-center">
+            <div className="relative inline-block">
+              <span className="text-7xl md:text-8xl text-blue-400 font-serif absolute -top-8 -left-4 md:-top-10 md:-left-12 leading-none select-none">“</span>
+              <p className="text-lg md:text-2xl font-light text-slate-500 leading-relaxed font-sans relative z-10 px-2">
+                Escríbeme y te detallaré la estrategia detrás de mis proyectos: el reto, la investigación y las decisiones clave. <br/>
+                <span className="font-black text-blue-600 mt-4 inline-block">100% disponible</span>
+              </p>
+              <span className="text-7xl md:text-8xl text-blue-400 font-serif absolute -bottom-12 -right-2 md:-bottom-14 md:-right-10 leading-none select-none">”</span>
+            </div>
+            <a href="mailto:jdemig@gmail.com" className="mt-16 inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-2xl font-heading font-bold hover:bg-blue-500 transition-all shadow-xl shadow-blue-500/20 text-sm tracking-wide relative z-20">
+              <Mail size={18} /> Contactar
+            </a>
           </div>
 
         </section>
@@ -947,7 +965,7 @@ export default function App() {
                 <div className="flex-1">
                   <h4 className="text-lg md:text-xl font-heading font-black text-white mb-2 tracking-wide">1. DESCUBRIMIENTO</h4>
                   <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
-                    Análisis profundo de los datos del <i>checkout</i> heredado para identificar cuellos de botella y comprender las causas reales de la alta tasa de abandono (<i>drop-off</i>).
+                    Análisis profundo de los datos del <i>checkout</i> heredado para identify cuellos de botella y comprender las causas reales de la alta tasa de abandono (<i>drop-off</i>).
                   </p>
                 </div>
               </div>
@@ -1311,7 +1329,7 @@ export default function App() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-left">
-           <p className="text-[10px] text-slate-600 font-heading uppercase tracking-widest font-bold text-left text-left">© 2026 Javier de Miguel</p>
+           <p className="text-[10px] text-slate-600 font-heading uppercase tracking-widest font-bold text-left text-left">© 2026 JDM-OS | Corporate Excellence v6.4</p>
         </div>
       </footer>
 
@@ -1326,7 +1344,7 @@ export default function App() {
         .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(37, 99, 235, 0.4); }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
       `}</style>
-      
+
       {/* Recuerda descomentar esto en producción: */}
       {<Analytics/>}
     </div>
