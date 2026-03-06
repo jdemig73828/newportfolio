@@ -417,7 +417,7 @@ export default function App() {
                { label: "Design Systems", val: "90%", icon: <Component /> },
                { label: "AI Integration", val: "85%", icon: <Zap /> }
              ].map((s, i) => (
-               <div key={i} className="bg-white p-6 md:p-8 rounded-[30px] border border-slate-100 shadow-sm flex items-center gap-5 hover:border-blue-200 transition-all group text-left">
+               <div key={i} className="bg-white p-6 md:p-8 rounded-[30px] border border-blue-200 shadow-sm flex items-center gap-5 transition-all group text-left">
                   <div className="text-blue-600 group-hover:scale-110 transition-transform">{s.icon}</div>
                   <div className="text-left"><p className="text-[10px] font-heading font-bold text-slate-400 uppercase tracking-tight text-left">{s.label}</p><p className="text-xl md:text-2xl font-black text-[#0A192F] font-heading text-left">{s.val}</p></div>
                </div>
@@ -1501,7 +1501,7 @@ export default function App() {
         .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(37, 99, 235, 0.4); }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
       `}</style>
-      {/* Recuerda descomentar esto en producción: */}
+       {/* Recuerda descomentar esto en producción: */}
       {<Analytics/>}
     </div>
   );
