@@ -372,7 +372,7 @@ export default function App() {
               <span className="text-blue-500 font-normal">Resultados</span>
             </h1>
             <p className="text-lg md:text-2xl text-slate-400 font-light max-w-2xl leading-relaxed mx-auto lg:mx-0 font-sans text-left">
-              Transformando comportamientos de usuario en <span className="text-white font-semibold italic border-b-2 border-blue-500">valor de negocio cuantificable</span> mediante evidencia científica.
+              Transformando comportamientos de usuario en <span className="text-white font-semibold italic border-b-2 border-blue-500">valor de negocio cuantificable</span> mediante evidencia científica y generando "impacto" de manera ética.
             </p>
             <p className="text-lg md:text-2xl text-slate-400 font-light max-w-2xl leading-relaxed mx-auto lg:mx-0 font-sans text-left">
               Me muevo en la intersección entre la Influencia Ética, el ciclo de vida del usuario y la conversión. Escríbeme y te detallaré la estrategia detrás de mis proyectos: el reto, la investigación y las decisiones clave.<br/><span className="text-white font-semibold italic border-b-2 border-blue-500">Estoy a tu entera disposición.</span>
