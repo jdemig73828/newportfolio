@@ -32,7 +32,9 @@ import {
   Monitor, 
   Component, 
   ExternalLink,
-  ArrowUp
+  ArrowUp,
+  Menu,
+  X
 } from 'lucide-react';
 
 // --- DATA: EXPERIENCIA ---
@@ -250,9 +252,22 @@ const TESTIMONIALS = [
 export default function App() {
   const [activeSection, setActiveSection] = useState('trayectoria');
   const [showTopBtn, setShowTopBtn] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const scrollContainerRef = useRef(null);
   const scrollGalleryRef = useRef(null); // Ref para la galería
+
+  // --- LOCK SCROLL ON MOBILE MENU ---
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMobileMenuOpen]);
 
   // --- SCROLL SPY & TOP BUTTON LOGIC ---
   useEffect(() => {
@@ -334,7 +349,7 @@ export default function App() {
             <span className="font-heading font-bold text-white text-lg tracking-tight truncate max-w-[150px] md:max-w-none">Javier de Miguel</span>
           </div>
           
-          <div className="hidden md:flex gap-10 text-[11px] font-heading font-bold uppercase tracking-[0.1em] relative items-center">
+          <div className="hidden lg:flex gap-10 text-[11px] font-heading font-bold uppercase tracking-[0.1em] relative items-center">
             {['trayectoria', 'evidencias', 'proceso', 'ecosistema', 'testimonios'].map((id) => (
               <a 
                 key={id}
@@ -352,7 +367,16 @@ export default function App() {
             ))}
           </div>
           
-          <a href="mailto:jdemig@gmail.com" className="bg-blue-600 text-white px-5 py-2 rounded-full text-[11px] font-heading font-bold hover:bg-blue-500 transition-all shadow-lg shrink-0 tracking-wider">Contacto</a>
+          <a href="mailto:jdemig@gmail.com" className="hidden lg:inline-flex bg-blue-600 text-white px-5 py-2 rounded-full text-[11px] font-heading font-bold hover:bg-blue-500 transition-all shadow-lg shrink-0 tracking-wider">Contacto</a>
+          
+          {/* Botón Menú Hamburguesa (Móvil y Tablet) */}
+          <button 
+            onClick={() => setIsMobileMenuOpen(true)}
+            className="lg:hidden text-white p-2 hover:text-blue-400 transition-colors"
+            aria-label="Abrir menú"
+          >
+            <Menu size={28} />
+          </button>
         </div>
       </nav>
 
@@ -1502,6 +1526,55 @@ export default function App() {
         .scrollbar-hide::-webkit-scrollbar { display: none; }
       `}</style>
        {/* Recuerda descomentar esto en producción: */}
+      {/* <Analytics/> */}
+
+      {/* --- MENÚ MÓVIL / TABLET FULLSCREEN --- */}
+      <div 
+        className={`fixed inset-0 z-[100] bg-white transform transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] flex flex-col lg:hidden ${
+          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex justify-between items-center p-6 md:p-8">
+          <div className="font-heading font-black text-[#0A192F] text-xl tracking-tighter">Javier de Miguel</div>
+          <button 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-sm md:text-base font-heading font-bold uppercase tracking-widest text-[#0A192F] flex items-center gap-2 hover:text-blue-600 transition-colors"
+          >
+            Cerrar <X size={24} strokeWidth={2} />
+          </button>
+        </div>
+        
+        <div className="flex-1 flex flex-col items-center justify-center gap-8 md:gap-10 px-6 pb-20 overflow-y-auto">
+          {['trayectoria', 'evidencias', 'proceso', 'ecosistema', 'testimonios'].map((id) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                setIsMobileMenuOpen(false);
+                setTimeout(() => {
+                  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+                  setActiveSection(id);
+                }, 300);
+              }}
+              className="text-3xl md:text-4xl font-heading font-light text-[#0A192F] hover:text-blue-600 transition-colors capitalize tracking-tight"
+            >
+              {id.charAt(0).toUpperCase() + id.slice(1)}
+            </a>
+          ))}
+          
+          <div className="mt-12 md:mt-16">
+            <a 
+              href="mailto:jdemig@gmail.com" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="inline-block bg-blue-600 text-white px-10 py-4 rounded-full font-heading font-bold hover:bg-blue-500 transition-all shadow-lg shadow-blue-500/20 text-sm tracking-wider uppercase"
+            >
+              Contactar
+            </a>
+          </div>
+        </div>
+      </div>
+      {/* Recuerda descomentar esto en producción: */}
       {<Analytics/>}
     </div>
   );
