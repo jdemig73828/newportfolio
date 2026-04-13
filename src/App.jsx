@@ -496,7 +496,7 @@ export default function App() {
                 Ver más experiencias <Linkedin size={20} className="text-slate-400" />
               </a>
               <a 
-                href="https://drive.google.com/file/d/1M6yrhdBHCVU4ZzVONCtD9xVAgzmCWqbZ/view?usp=sharing" 
+                href="https://drive.google.com/file/d/1dPaHMr4JFKgnDb6UXbDCzGGl0pRjqAAi/view?usp=sharing" 
                 target="_blank"
                 className="text-sm font-bold text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2 font-sans mt-4"
               >
