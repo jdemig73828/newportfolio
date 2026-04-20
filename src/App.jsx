@@ -25,7 +25,7 @@ const EXPERIENCE = [
     id: 'vocento',
     company: 'VOCENTO',
     role: 'UX - UI & Behavioral Designer',
-    period: '2023 — Presente',
+    period: '2023 — Febrero 2026',
     description: 'Estrategia corporativa de usuarios para ABC y medios regionales. Optimización de CRO, flujos de pago y captación impulsados por IA y análisis de datos.',
   },
   {
@@ -518,7 +518,7 @@ export default function App() {
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {GALLERY_IMAGES.map((imgId, idx) => (
-            <div key={idx} className="min-w-[80vw] md:min-w-[60vw] lg:min-w-[40vw] h-[50vh] md:h-[70vh] snap-center rounded-sm overflow-hidden bg-zinc-100 shrink-0">
+            <div key={idx} className="min-w-[80vw] md:min-w-[60vw] lg:min-w-[40vw] h-[50vh] md:h-[70vh] snap-center rounded-sm overflow-hidden bg-white shrink-0">
               <img 
                 src={`https://lh3.googleusercontent.com/d/${imgId}`}
                 alt={`Galería de diseño ${idx + 1}`}
@@ -616,7 +616,7 @@ export default function App() {
         </div>
       </div>
       {/* Recuerda descomentar esto en producción: */}
-      {<Analytics/>}
+      { <Analytics/> }
     </div>
   );
 }
