@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 // Comentado para el entorno de previsualización (descomentar en producción)
-// import { Analytics } from "@vercel/analytics/react" 
+ import { Analytics } from "@vercel/analytics/react" 
 
 import { 
   ArrowUp,
@@ -615,6 +615,8 @@ export default function App() {
           </div>
         </div>
       </div>
+      {/* Recuerda descomentar esto en producción: */}
+      {<Analytics/>}
     </div>
   );
 }
