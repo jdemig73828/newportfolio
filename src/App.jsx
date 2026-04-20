@@ -334,7 +334,7 @@ export default function App() {
           </div>
           
           <div className="mt-12 flex items-center gap-6">
-            <a href="https://drive.google.com/file/d/1dPaHMr4JFKgnDb6UXbDCzGGl0pRjqAAi/view?usp=sharing" target="_blank" rel="noreferrer" className="text-sm font-medium text-black hover:text-zinc-600 flex items-center gap-2 underline underline-offset-4">
+            <a href="https://drive.google.com/file/d/1MBjyFDTxjDOsGcm9y0-r_DbTBVz6NlK0" target="_blank" rel="noreferrer" className="text-sm font-medium text-black hover:text-zinc-600 flex items-center gap-2 underline underline-offset-4">
               Ver Currículum Vitae <ArrowRight size={16} />
             </a>
             <a href="https://www.linkedin.com/in/javier-de-miguel-torres/" target="_blank" rel="noreferrer" className="text-sm font-medium text-black hover:text-zinc-600 flex items-center gap-2 underline underline-offset-4">
