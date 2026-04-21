@@ -527,14 +527,14 @@ export default function App() {
       <footer className="bg-black pt-32 pb-12 px-6 text-white selection:bg-white selection:text-black">
         <div className="max-w-screen-2xl mx-auto">
           
-          <div className="flex flex-col md:flex-row justify-between items-end border-b border-zinc-800">
-            <h2 className="text-[12vw] sm:text-[10vw] font-display font-semibold leading-[0.85] tracking-[-0.05em] opacity-90 m-0 pb-12 md:pb-16">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-end border-b border-zinc-800">
+            <h2 className="w-full text-left md:w-auto text-[12vw] sm:text-[10vw] font-display font-semibold leading-[0.85] tracking-[-0.05em] opacity-90 m-0 pb-12 md:pb-16">
               Hablemos.
             </h2>
             <img 
               src="https://lh3.googleusercontent.com/d/1ohRgpkdgcIYIAxUBpf_4btJE-cQba2Zi" 
               alt="Hablemos" 
-              className="w-48 sm:w-64 md:w-80 lg:w-[26rem] h-auto object-contain object-bottom translate-x-2 md:translate-x-4"
+              className="w-60 sm:w-64 md:w-80 lg:w-[26rem] h-auto object-contain object-bottom translate-x-0 md:translate-x-4"
               style={{ marginBottom: '-1px' }}
             />
           </div>
