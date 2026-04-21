@@ -241,46 +241,41 @@ export default function App() {
       </nav>
 
       {/* --- HERO SECTION --- */}
-      <header id="home" className="pt-32 pb-20 md:pt-48 md:pb-32 px-6 max-w-screen-2xl mx-auto relative scroll-mt-32">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <header id="home" className="pt-32 pb-20 md:pt-48 md:pb-32 px-6 max-w-screen-2xl mx-auto relative scroll-mt-32 flex flex-col lg:flex-row items-end">
+        
+        {/* TEXTO IZQUIERDA */}
+        <div className="w-full lg:w-7/12 relative z-0 flex flex-col items-start pb-0 lg:pb-8">
           
-          {/* TEXTO IZQUIERDA */}
-          <div className="lg:col-span-7 flex flex-col items-start">
-            
-            {/* Píldora de experiencia restaurada */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-zinc-100 text-zinc-600 border border-zinc-200 text-[10px] font-sans font-bold rounded-full tracking-widest uppercase mb-8">
-              <Award size={14} /> + de 20 años de experiencia estratégica
-            </div>
-
-            <h1 className="text-6xl sm:text-7xl md:text-[6rem] lg:text-[7.5rem] font-display font-semibold leading-[0.95] tracking-[-0.04em] mb-8 text-black">
-              Diseñando<br />Resultados.
-            </h1>
-            <p className="text-xl md:text-2xl text-zinc-500 font-light max-w-2xl leading-relaxed mb-10">
-              Transformando comportamientos en <strong className="text-black font-medium">valor de negocio</strong>. En la intersección de la influencia ética, la experiencia de usuario y la conversión.
-            </p>
-            
-            <div className="flex flex-wrap gap-4 items-center">
-              <a href="#proceso" className="flex items-center gap-2 bg-black text-white px-7 py-4 rounded-sm text-sm font-medium hover:bg-zinc-800 transition-colors">
-                Ver procesos <ArrowRight size={16} />
-              </a>
-            </div>
+          {/* Píldora de experiencia */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-zinc-100 text-zinc-600 border border-zinc-200 text-[10px] font-sans font-bold rounded-full tracking-widest uppercase mb-8">
+            <Award size={14} /> + de 20 años de experiencia estratégica
           </div>
-          
-          {/* IMAGEN DERECHA Y TARJETA FLOTANTE */}
-          <div className="lg:col-span-5 relative mt-12 lg:mt-0">
-            <div className="aspect-[3/4] w-full max-w-md mx-auto lg:ml-auto relative overflow-hidden rounded-sm bg-zinc-100">
-              {/* Imagen en blanco y negro (escala de grises al 100%) */}
-              <img 
-                src="https://lh3.googleusercontent.com/d/1UJrYipfZQTBeOcgrftsxIQA1KwiJLd49" 
-                alt="Javier de Miguel" 
-                className="w-full h-full object-cover object-top grayscale transition-all duration-700 ease-in-out"
-              />
-              {/* Overlay degradado alfa para fundir el azul de la imagen con el fondo de la web */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#FCFCFC] via-[#FCFCFC]/30 to-transparent pointer-events-none"></div>
-            </div>
 
-            {/* Tarjeta flotante de Certificaciones Restaurada */}
-            <div className="absolute -bottom-6 -left-2 md:-left-12 bg-white border border-zinc-200 p-5 md:p-6 rounded-sm shadow-2xl z-10 flex flex-col gap-4 animate-in fade-in zoom-in duration-700">
+          <h1 className="text-6xl sm:text-7xl md:text-[6rem] lg:text-[7.5rem] font-display font-semibold leading-[0.95] tracking-[-0.04em] mb-8 text-black relative z-0">
+            Diseñando<br />Resultados.
+          </h1>
+          <p className="text-xl md:text-2xl text-zinc-500 font-light max-w-2xl leading-relaxed mb-10">
+            Transformando comportamientos en <strong className="text-black font-medium">valor de negocio</strong>. En la intersección de la influencia ética, la experiencia de usuario y la conversión.
+          </p>
+          
+          <div className="flex flex-wrap gap-4 items-center">
+            <a href="#proceso" className="flex items-center gap-2 bg-black text-white px-7 py-4 rounded-sm text-sm font-medium hover:bg-zinc-800 transition-colors">
+              Ver procesos <ArrowRight size={16} />
+            </a>
+          </div>
+        </div>
+        
+        {/* IMAGEN DERECHA SUPERPUESTA */}
+        <div className="w-full mt-12 lg:mt-0 lg:w-5/12 lg:absolute lg:bottom-0 lg:right-6 z-10 flex justify-end items-end -mb-20 md:-mb-32 lg:-mb-0 pointer-events-none">
+          <div className="relative flex justify-end items-end w-full pointer-events-auto">
+            {/* Imagen principal recortada a la derecha, naciendo de la base y con límite de altura para no cortar la cabeza */}
+            <img 
+              src="https://lh3.googleusercontent.com/d/1JzhehHI0Kt0inGML3nsxQZxgYb0hgZ0R" 
+              alt="Javier de Miguel" 
+              className="w-[110%] sm:w-full max-w-md lg:max-w-none lg:w-auto max-h-[65vh] md:max-h-[75vh] lg:max-h-[80vh] h-auto object-contain object-bottom translate-x-4 lg:translate-x-8"
+            />
+            {/* Tarjeta flotante de Certificaciones */}
+            <div className="absolute bottom-8 lg:bottom-16 -left-4 md:left-0 lg:-left-20 bg-white border border-zinc-200 p-5 md:p-6 rounded-sm shadow-2xl z-20 flex flex-col gap-4 animate-in fade-in zoom-in duration-700">
               <p className="text-[10px] uppercase tracking-widest text-zinc-400 font-bold">Certificaciones Estratégicas</p>
               <div className="flex gap-5 items-center">
                 {/* Badge 1 */}
@@ -290,12 +285,11 @@ export default function App() {
               </div>
             </div>
           </div>
-
         </div>
       </header>
 
       {/* --- SKILLS LÍNEAS LIMPIAS --- */}
-      <section className="border-y border-zinc-200 bg-white">
+      <section className="border-y border-zinc-200 bg-white relative z-20">
         <div className="max-w-screen-2xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-zinc-200">
              {[
@@ -461,7 +455,7 @@ export default function App() {
       </section>
 
       {/* --- ECOSISTEMA (LOGOS) --- */}
-      <section className="py-20 md:py-24 border-y border-zinc-200 bg-zinc-50 px-6">
+      <section className="py-20 md:py-24 border-y border-zinc-200 bg-white px-6">
         <div className="max-w-screen-2xl mx-auto text-center">
           <p className="text-sm font-medium text-zinc-500 uppercase tracking-widest mb-12">Marcas que han confiado en este proceso</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-10 md:gap-16 opacity-60 items-center justify-items-center">
@@ -532,11 +526,20 @@ export default function App() {
       {/* --- FOOTER MODERNO Y MASIVO --- */}
       <footer className="bg-black pt-32 pb-12 px-6 text-white selection:bg-white selection:text-black">
         <div className="max-w-screen-2xl mx-auto">
-          <h2 className="text-[12vw] sm:text-[10vw] font-display font-semibold leading-[0.85] tracking-[-0.05em] mb-16 opacity-90">
-            Hablemos.
-          </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-t border-zinc-800 pt-16">
+          <div className="flex flex-col md:flex-row justify-between items-end border-b border-zinc-800">
+            <h2 className="text-[12vw] sm:text-[10vw] font-display font-semibold leading-[0.85] tracking-[-0.05em] opacity-90 m-0 pb-12 md:pb-16">
+              Hablemos.
+            </h2>
+            <img 
+              src="https://lh3.googleusercontent.com/d/1ohRgpkdgcIYIAxUBpf_4btJE-cQba2Zi" 
+              alt="Hablemos" 
+              className="w-48 sm:w-64 md:w-80 lg:w-[26rem] h-auto object-contain object-bottom translate-x-2 md:translate-x-4"
+              style={{ marginBottom: '-1px' }}
+            />
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pt-16">
             <div className="lg:col-span-2">
               <p className="text-xl text-zinc-400 font-light max-w-sm mb-8">
                 Abierto a nuevos retos de diseño estratégico, oportunidades de CRO y consultoría en Behavioral Design.
