@@ -196,7 +196,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FCFCFC] text-zinc-900 font-sans scroll-smooth overflow-x-hidden selection:bg-black selection:text-white">
+    <div className="min-h-screen bg-white text-zinc-900 font-sans scroll-smooth overflow-x-hidden selection:bg-black selection:text-white">
       
       {/* BOTÓN FLOTANTE */}
       <button
@@ -208,7 +208,7 @@ export default function App() {
       </button>
 
       {/* --- NAVEGACIÓN MINIMALISTA --- */}
-      <nav className="fixed top-0 w-full z-50 bg-[#FCFCFC]/90 backdrop-blur-md border-b border-zinc-200/50 px-6 py-4 transition-all">
+      <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-zinc-200/50 px-6 py-4 transition-all">
         <div className="max-w-screen-2xl mx-auto flex justify-between items-center">
           <div className="font-display font-bold text-xl tracking-tight">
             <a href="#home" onClick={(e) => { e.preventDefault(); scrollToTop(); }}>Javier de Miguel.</a>
