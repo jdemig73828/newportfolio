@@ -148,6 +148,33 @@ export default function App() {
   const scrollTestimonialRef = useRef(null);
   const scrollGalleryRef = useRef(null);
 
+  // --- ESTADO Y LÓGICA PARA TEXTO ANIMADO ---
+  const [text, setText] = useState('');
+  const [loopNum, setLoopNum] = useState(0);
+
+  useEffect(() => {
+    const words = ["Product Design", "User Experience", "Behavioral Design", "IA Powered"];
+    let timer;
+
+    const i = loopNum % words.length;
+    const fullText = words[i];
+
+    if (text === fullText) {
+      // Pausa al completar la palabra y luego borrado instantáneo (desaparece)
+      timer = setTimeout(() => {
+        setText('');
+        setLoopNum(loopNum + 1);
+      }, 2500);
+    } else {
+      // Escribiendo hacia adelante
+      timer = setTimeout(() => {
+        setText(fullText.substring(0, text.length + 1));
+      }, 80); // Velocidad de escritura
+    }
+
+    return () => clearTimeout(timer);
+  }, [text, loopNum]);
+
   // --- LOCK SCROLL ON MOBILE MENU ---
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -251,9 +278,15 @@ export default function App() {
             <Award size={14} /> + de 20 años de experiencia estratégica
           </div>
 
-          <h1 className="text-6xl sm:text-7xl md:text-[6rem] lg:text-[7.5rem] font-display font-semibold leading-[0.95] tracking-[-0.04em] mb-8 text-black relative z-0">
+          <h1 className="text-6xl sm:text-7xl md:text-[6rem] lg:text-[7.5rem] font-display font-semibold leading-[0.95] tracking-[-0.04em] mb-2 md:mb-4 text-black relative z-0">
             Diseñando<br />Resultados.
           </h1>
+          
+          {/* Texto Animado */}
+          <div className="text-3xl sm:text-4xl md:text-5xl font-display font-light text-[#C4A77D] mb-8 h-10 sm:h-12 md:h-14 flex items-center">
+            {text}<span className="animate-pulse ml-1 font-light opacity-70">|</span>
+          </div>
+
           <p className="text-xl md:text-2xl text-zinc-500 font-light max-w-2xl leading-relaxed mb-10">
             Transformando comportamientos en <strong className="text-black font-medium">valor de negocio</strong>. En la intersección de la influencia ética, la experiencia de usuario y la conversión.
           </p>
