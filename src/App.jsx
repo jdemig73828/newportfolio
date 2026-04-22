@@ -584,18 +584,18 @@ export default function App() {
 
       {/* --- MENÚ MÓVIL FULLSCREEN MINIMALISTA --- */}
       <div 
-        className={`fixed inset-0 z-[100] bg-black text-white transform transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] flex flex-col lg:hidden ${
-          isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
+        className={`fixed inset-0 z-[100] bg-black text-white transform transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] flex flex-col lg:hidden ${
+          isMobileMenuOpen ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0 pointer-events-none'
         }`}
       >
-        <div className="flex justify-between items-center p-6 border-b border-zinc-800">
+        <div className="flex justify-between items-center p-6 border-b border-zinc-800 shrink-0">
           <div className="font-display font-semibold text-lg tracking-tight">Javier de Miguel.</div>
           <button onClick={() => setIsMobileMenuOpen(false)} className="text-white p-2">
             <X size={28} strokeWidth={1.5} />
           </button>
         </div>
         
-        <div className="flex-1 flex flex-col justify-center px-8 gap-8">
+        <div className="flex-1 flex flex-col justify-center px-8 gap-8 overflow-y-auto py-10">
           {['home', 'trayectoria', 'evidencias', 'proceso', 'testimonios'].map((id, i) => (
             <a
               key={id}
@@ -611,7 +611,7 @@ export default function App() {
             </a>
           ))}
           
-          <div className="mt-8 pt-8 border-t border-zinc-800">
+          <div className="mt-8 pt-8 border-t border-zinc-800 shrink-0">
             <a href="mailto:jdemig@gmail.com" className="text-xl font-light underline underline-offset-8 decoration-zinc-700 hover:decoration-white transition-all">
               jdemig@gmail.com
             </a>
