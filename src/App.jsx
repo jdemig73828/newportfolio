@@ -153,7 +153,7 @@ export default function App() {
   const [loopNum, setLoopNum] = useState(0);
 
   useEffect(() => {
-    const words = ["Product Design", "User Experience", "Behavioral Design", "IA Powered"];
+    const words = ["Product Design", "User Experience", "C R O", "Behavioral Design", "IA Powered"];
     let timer;
 
     const i = loopNum % words.length;
