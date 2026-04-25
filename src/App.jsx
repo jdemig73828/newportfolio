@@ -156,7 +156,7 @@ export default function App() {
     // Aquí están los literales actualizados según tus instrucciones
     const words = [
       "Product Design", 
-      "AI-Driven UX Research & Testing", 
+      "AI-Driven UX Research", 
       "User Experience", 
       "C R O", 
       "Behavioral Design"
