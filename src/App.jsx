@@ -16,7 +16,8 @@ import {
   Mail,
   Check,
   Award,
-  ChevronDown
+  ChevronDown,
+  TrendingUp
 } from 'lucide-react';
 
 // --- DATA: EXPERIENCIA ---
@@ -140,6 +141,16 @@ const TESTIMONIALS = [
   { id: 5, name: "Elena Segura", role: "Ux Senior Designer en Vocento", text: "Su versatilidad hace que aporte en cualquier punto y facilita el trabajo transversal. Excelente persona." }
 ];
 
+// --- DATA: TICKER ---
+const TICKER_PHRASES = [
+  "+31.113 Activos netos (Suscripciones)",
+  "+ 42,5% en Volumen total de activos",
+  "+13,9% (ARPU ABC) - Aumento de predisposición al pago",
+  "+19,9% Usuarios fidelizados en campañas de retención",
+  "-23,8% tasa de abandono en proceso de registro",
+  "Churn: Reducción neta (5,11% Vs 4,35%)"
+];
+
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [showTopBtn, setShowTopBtn] = useState(false);
@@ -153,7 +164,6 @@ export default function App() {
   const [loopNum, setLoopNum] = useState(0);
 
   useEffect(() => {
-    // Aquí están los literales actualizados según tus instrucciones
     const words = [
       "Product Design", 
       "AI-Driven UX Research", 
@@ -181,6 +191,22 @@ export default function App() {
 
     return () => clearTimeout(timer);
   }, [text, loopNum]);
+
+  // --- ESTADO Y LÓGICA PARA TICKER DE RESULTADOS ---
+  const [tickerIndex, setTickerIndex] = useState(0);
+  const [fadeTicker, setFadeTicker] = useState(true);
+
+  useEffect(() => {
+    const tickerInterval = setInterval(() => {
+      setFadeTicker(false);
+      setTimeout(() => {
+        setTickerIndex((prev) => (prev + 1) % TICKER_PHRASES.length);
+        setFadeTicker(true);
+      }, 500); // Duración del fundido de salida
+    }, 7000); // Cambia cada 7 segundos
+
+    return () => clearInterval(tickerInterval);
+  }, []);
 
   // --- LOCK SCROLL ON MOBILE MENU ---
   useEffect(() => {
@@ -345,6 +371,32 @@ export default function App() {
              ))}
           </div>
         </div>
+      </section>
+
+      {/* --- FILA NEGRA: TICKER DE RESULTADOS --- */}
+      <section className="w-full bg-gradient-to-r from-zinc-800 via-black to-zinc-800 h-10 md:h-12 lg:h-14 relative z-20 flex items-center overflow-hidden">
+        <div className={`w-full px-4 overflow-x-auto scrollbar-hide flex justify-center transition-all duration-500 transform ${fadeTicker ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+          <div className="flex items-center gap-2 md:gap-3 whitespace-nowrap">
+            <TrendingUp className="text-zinc-400 shrink-0" size={16} />
+            <span className="text-white text-[11px] sm:text-xs md:text-sm tracking-wide font-medium">
+              {TICKER_PHRASES[tickerIndex]}
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* --- TEXTO FIJO DEBAJO DEL TICKER --- */}
+      <section className="w-full bg-white py-6 flex items-center justify-center gap-4 md:gap-8 px-4 border-b border-zinc-200 relative z-20">
+        <ArrowUp className="text-zinc-300 shrink-0" size={24} />
+        <div className="flex flex-col items-center justify-center text-center">
+          <p className="text-xs sm:text-sm font-semibold text-zinc-500 uppercase tracking-widest mb-1">
+            Aplicación UX & Behavioral en VOCENTO
+          </p>
+          <p className="text-[10px] sm:text-xs font-medium text-zinc-400">
+            (Junio 2023 - Marzo 2026)
+          </p>
+        </div>
+        <ArrowUp className="text-zinc-300 shrink-0" size={24} />
       </section>
 
       {/* --- TRAYECTORIA --- */}
