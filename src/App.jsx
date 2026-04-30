@@ -699,7 +699,7 @@ export default function App() {
               }}
               className="text-4xl md:text-5xl font-display font-light text-zinc-400 hover:text-white transition-colors capitalize flex items-center gap-4"
             >
-              <span className="text-sm font-sans font-semibold text-zinc-700">0{i+1}</span> {id}
+              <span className="text-sm font-sans font-semibold text-zinc-700">0{i+1}</span> {id === 'home' ? 'inicio' : id}
             </a>
           ))}
           
