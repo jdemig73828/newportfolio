@@ -26,7 +26,7 @@ const EXPERIENCE = [
     id: 'vocento',
     company: 'VOCENTO',
     role: 'UX - UI & Behavioral Designer',
-    period: '2023 — Febrero 2026',
+    period: '2023 — 2026',
     description: 'Estrategia corporativa de usuarios para ABC y medios regionales. Optimización de CRO, flujos de pago y captación impulsados por IA y análisis de datos.',
   },
   {
@@ -165,7 +165,7 @@ export default function App() {
 
   useEffect(() => {
     const words = [
-      "Product Design", 
+      "Product Marketing & Design", 
       "AI-Driven UX Research", 
       "User Experience", 
       "C R O", 
