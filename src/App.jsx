@@ -27,7 +27,7 @@ const EXPERIENCE = [
     company: 'OEC Connection',
     role: 'Marketing & Digital Product Coordinator',
     period: '2026 — Actualidad',
-    description: 'Marketing & Digital Product Coordinator, Cross-Functional Collaboration, Cross-Functional Collaboration, Cross-Functional Collaboration.',
+    description: 'Marketing Strategy & Execution, Cross-Functional Collaboration, Cross-Functional Collaboration, Cross-Functional Collaboration.',
   },
   {
     id: 'vocento',
